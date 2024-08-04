@@ -1,0 +1,23 @@
+@keyframes moving {
+  100% {transform: rotate(-360deg);}
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 175px;
+  height: 63px;
+
+
+
+
+  img {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    animation: moving 3s infinite linear;
+  }
+
+}

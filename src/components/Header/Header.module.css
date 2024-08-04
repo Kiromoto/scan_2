@@ -1,0 +1,9 @@
+.headerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 93px;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

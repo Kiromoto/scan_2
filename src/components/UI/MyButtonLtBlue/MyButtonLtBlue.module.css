@@ -1,0 +1,30 @@
+@import-normalize;
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
+  font-family: "Ferry";
+  src: url("assets/fonts/Ferry-Black.eot");
+  src: local("Ferry Black"), local("Ferry-Black"), url("assets/fonts/Ferry-Black.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Ferry-Black.woff") format("woff"), url("assets/fonts/Ferry-Black.ttf") format("truetype");
+}
+body {
+  margin: 0 0 0 calc((100vw - 1440px) / 2);
+  padding: 0;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.myBtn {
+  width: 65px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #7CE3E1;
+  margin-left: 25px;
+  cursor: pointer;
+}
+.myBtn:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=MyButtonLtBlue.module.css.map */

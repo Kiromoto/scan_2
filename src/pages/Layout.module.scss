@@ -1,0 +1,16 @@
+@import "../index";
+
+.appСontainer {
+  display: flex;
+  flex-direction: column;
+  border: black solid 1px;
+
+
+  .mainСontainer {
+    display: flex;
+    flex-direction: column;
+    border: red solid 1px;
+  }
+
+
+}

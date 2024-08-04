@@ -1,0 +1,21 @@
+@import "../../../index.scss";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 251px;
+  height: 26px;
+  margin-left: calc(1129px - 236px - 602px);
+
+  .slash {
+    width: 2px;
+    height: 26px;
+    flex-shrink: 0;
+    opacity: 0.6;
+    background: $color-green;
+    margin-left: 18px;
+  }
+
+}

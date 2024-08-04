@@ -1,0 +1,35 @@
+@import-normalize;
+
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
+
+  font-family: 'Ferry';
+  src: url("assets/fonts/Ferry-Black.eot");
+  src: local('Ferry Black'), local('Ferry-Black'),
+  url('assets/fonts/Ferry-Black.eot?#iefix') format('embedded-opentype'),
+  url('assets/fonts/Ferry-Black.woff') format('woff'),
+  url('assets/fonts/Ferry-Black.ttf') format('truetype');
+}
+
+
+$color-green: #029491;
+$color-black: #000;
+$color-white: #fff;
+$color-orange: #FFB64F;
+$color-turquoise: #7CE3E1;
+$color-blue: #040d54;
+$color-error: #FF5959;
+$full-width: 1440px;
+
+//$min-height-main-container: calc(100vh - 120px - 122px);
+
+
+body {
+  margin: 0 0 0 calc((100vw - 1440px) / 2);
+  padding: 0;
+  width: $full-width;
+  display: flex;
+  flex-direction: column;
+
+}

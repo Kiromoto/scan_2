@@ -1,0 +1,30 @@
+@import "../../../index";
+
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: calc(602px - 60px - 141px);
+  width: 236px;
+  height: 17px;
+
+
+  .navLink {
+    color: #000;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+    text-decoration: none;
+    margin-right: 45px;
+
+    &:hover {
+      color: $color-blue;
+    }
+  }
+
+  &:active {
+    color: yellow;
+    cursor: default;
+  }
+}

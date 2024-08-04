@@ -1,0 +1,42 @@
+@import-normalize;
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
+  font-family: "Ferry";
+  src: url("assets/fonts/Ferry-Black.eot");
+  src: local("Ferry Black"), local("Ferry-Black"), url("assets/fonts/Ferry-Black.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Ferry-Black.woff") format("woff"), url("assets/fonts/Ferry-Black.ttf") format("truetype");
+}
+body {
+  margin: 0 0 0 calc((100vw - 1440px) / 2);
+  padding: 0;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 401px;
+  width: 236px;
+  height: 17px;
+}
+.navContainer .navLink {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+  text-decoration: none;
+  margin-right: 45px;
+}
+.navContainer .navLink:hover {
+  color: #040d54;
+}
+.navContainer:active {
+  color: yellow;
+  cursor: default;
+}
+
+/*# sourceMappingURL=Navbar.module.css.map */
