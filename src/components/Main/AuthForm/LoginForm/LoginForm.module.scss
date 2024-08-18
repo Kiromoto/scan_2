@@ -1,0 +1,82 @@
+@import "../../../../index";
+
+.container {
+  width: 429px;
+  height: 523px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  background: $color-white;
+  border: 1px solid rgba(199, 199, 199, 1);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .loginRegisrationBox {
+    display: flex;
+    flex-direction: row;
+
+    width: 379px;
+    height: 29px;
+    margin: 25px 25px 0 25px;
+
+    .lgContainer {
+      display: flex;
+      flex-direction: column;
+
+      &:last-child {
+        margin: 0 0 0 15px
+      }
+
+      .lineLgContainer {
+        height: 2px;
+        margin: 6px 0 0 0;
+        background: $color-green;
+      }
+
+    }
+
+  }
+
+  .inputBox {
+    display: flex;
+    flex-direction: column;
+
+    height: 174px;
+    width: 379px;
+    border-radius: 5px;
+    margin: 40px 25px 0 25px;
+
+    .inputForm {
+      display: flex;
+      flex-direction: column;
+      width: 379px;
+
+      .inputTitle {
+        margin: 0;
+        padding: 0;
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        letter-spacing: 0.01em;
+        text-align: left;
+      }
+    }
+
+    .resumeLink {
+      margin: 15px 0 0 0;
+      align-self: center;
+      font-family: Inter;
+      margin-top: 15px;
+      color: #5970FF;
+      font-size: 14px;
+      letter-spacing: 2%;
+      cursor: pointer;
+    }
+
+
+  }
+
+}

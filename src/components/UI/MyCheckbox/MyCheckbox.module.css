@@ -1,0 +1,76 @@
+@import-normalize;
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
+  font-family: "Ferry";
+  src: url("assets/fonts/Ferry-Black.eot");
+  src: local("Ferry Black"), local("Ferry-Black"), url("assets/fonts/Ferry-Black.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Ferry-Black.woff") format("woff"), url("assets/fonts/Ferry-Black.ttf") format("truetype");
+}
+:export {
+  colorGreen: rgb(2, 148, 145);
+  colorBlack: rgb(0, 0, 0);
+  colorWhite: rgb(255, 255, 255);
+  colorOrange: rgb(255, 182, 79);
+  colorTurquoise: rgb(124, 227, 225);
+  colorBlue: rgb(89, 112, 255);
+  colorError: #FF5959;
+}
+
+body {
+  margin: 0 0 0 calc((100vw - 1440px) / 2);
+  padding: 0;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.myCheckboxLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-align: left;
+  margin: 0 0 15px 0;
+  opacity: 40%;
+  cursor: pointer;
+}
+.myCheckboxLabel:hover::before {
+  background-color: rgba(71, 196, 33, 0.4);
+}
+.myCheckboxLabel .inputCheckbox {
+  margin: 0 17px 0 0;
+  width: 20px;
+  height: 20px;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  letter-spacing: 0.03em;
+  text-align: left;
+  border: 1px solid rgb(0, 0, 0);
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+}
+
+.myCheckboxLabel::before {
+  content: "";
+  border: 1px solid rgb(0, 0, 0);
+  width: 20px;
+  height: 20px;
+  margin: 0 17px 0 0;
+}
+
+.checked {
+  opacity: 100%;
+}
+.checked::before {
+  content: url("./greenForCheckbox.svg");
+  color: rgb(71, 196, 33);
+}
+
+/*# sourceMappingURL=MyCheckbox.module.css.map */

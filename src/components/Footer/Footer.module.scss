@@ -1,2 +1,35 @@
 @import './../../index.scss';
 
+.container {
+  height: 137px;
+  flex-shrink: 0;
+  color: $color-white;
+  background: $color-green;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .logo {
+    width: 141px;
+    height: 141px;
+    margin: 2px 0 2px 60px;
+  }
+
+  .info {
+    width: 199px;
+    color: $color-white;
+    margin: 25px 45px 0 0;
+
+    text-align: right;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.14px;
+
+    .copyright {
+      margin: 21px 0 0 0;
+      font-size: 12px;
+    }
+  }
+
+}

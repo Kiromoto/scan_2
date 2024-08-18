@@ -1,0 +1,132 @@
+@import-normalize;
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
+  font-family: "Ferry";
+  src: url("assets/fonts/Ferry-Black.eot");
+  src: local("Ferry Black"), local("Ferry-Black"), url("assets/fonts/Ferry-Black.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Ferry-Black.woff") format("woff"), url("assets/fonts/Ferry-Black.ttf") format("truetype");
+}
+:export {
+  colorGreen: rgb(2, 148, 145);
+  colorBlack: rgb(0, 0, 0);
+  colorWhite: rgb(255, 255, 255);
+  colorOrange: rgb(255, 182, 79);
+  colorTurquoise: rgb(124, 227, 225);
+  colorBlue: rgb(89, 112, 255);
+  colorError: #FF5959;
+}
+
+body {
+  margin: 0 0 0 calc((100vw - 1440px) / 2);
+  padding: 0;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 540px;
+  width: 415px;
+  margin: 0 38px 0 0;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+.container:last-child {
+  margin: 0;
+}
+.container .title {
+  width: 100%;
+  height: 132px;
+  flex-shrink: 0;
+  border-radius: 10px 10px 0px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.container .title .nameTariff {
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  margin: 30px 0 0 30px;
+}
+.container .title .forWhom {
+  width: 313px;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.18px;
+  margin: 10px 0 0 30px;
+}
+.container .title .iconTariff {
+  max-width: 96px;
+  max-height: 103px;
+  margin: -80px 0 0 300px;
+}
+.container .body .currentLabel {
+  width: 134px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #3BA5E0;
+  font-family: Inter;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+  text-align: center;
+  line-height: 24px;
+  margin: 12px 0 0 271px;
+}
+.container .body .noCurrentLabel {
+  height: 24px;
+  margin: 12px 0 0 271px;
+}
+.container .body .price {
+  display: flex;
+  flex-direction: row;
+  font-weight: 500;
+}
+.container .body .price .priceNow {
+  font-size: 30px;
+  letter-spacing: 0.3px;
+  margin: 1px 19px 0px 30px;
+}
+.container .body .price .priceFull {
+  font-size: 25px;
+  letter-spacing: 0.25px;
+  text-decoration-line: line-through;
+  margin: 4px 0 0 0;
+  opacity: 0.5;
+}
+.container .body .installmentPlan {
+  height: 22px;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.36px;
+  margin: 10px 0 0 30px;
+}
+.container .body .tariffsDescription .descriptionTitle {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  margin: 59px 0 10px 30px;
+}
+.container .body .tariffsDescription .descriptionOneLine {
+  display: flex;
+  flex-direction: row;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.18px;
+  margin: 0 0 5px 30px;
+}
+.container .body .tariffsDescription .descriptionOneLine .descriptionText {
+  margin: 0 0 0 8px;
+}
+
+/*# sourceMappingURL=OneCardTariff.module.css.map */

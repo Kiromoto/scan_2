@@ -1,0 +1,46 @@
+@import "../../../index";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 60px 0 60px;
+  z-index: 1;
+  height: 620px;
+
+
+  .leftBlock {
+    width: 743px;
+    height: 288px;
+    margin: 0 -52px 0 0;
+    z-index: 3;
+
+    .descriptionTitle {
+      color: $color-black;
+      font-family: Ferry;
+      font-size: 60px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      letter-spacing: 0.6px;
+    }
+
+    .descriptionParagraph {
+      color: $color-black;
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.2px;
+
+      margin-top: 20px;
+      width: 534px;
+    }
+
+  }
+
+  .rightBlock {
+    z-index: 2;
+  }
+
+}

@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  .formBox {
+    display: flex;
+    flex-direction: row;
+    margin: 47px 0 64px 53px;
+  }
+
+}

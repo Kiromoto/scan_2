@@ -1,17 +1,83 @@
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 
 export const AuthContext = createContext({
     isLoggedIn: false,
     setIsLoggedIn: null,
+    userTariff: null,
+    setUserTariff: null,
+    accessToken: null,
+    setAccessToken: null,
+    expire: null,
+    setExpire: null,
 });
 
 export const AuthProvider = ({children}) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") ? JSON.parse(localStorage.getItem("isLoggedIn")) : false);
+    const [userTariff, setUserTariff] = useState(localStorage.getItem("userTariff") ? JSON.parse(localStorage.getItem("userTariff")) : 1);
+    const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken") ? JSON.parse(localStorage.getItem("accessToken")) : null);
+    const [expire, setExpire] = useState(localStorage.getItem("expire") ? JSON.parse(localStorage.getItem("expire")) : null);
+
+    useEffect(() => {
+        if(localStorage.getItem("isLoggedIn")){
+            setIsLoggedIn(JSON.parse(localStorage.getItem("isLoggedIn")))
+        }
+        if(localStorage.getItem("userTariff")){
+            setUserTariff(parseInt(JSON.parse(localStorage.getItem("userTariff"))))
+        }
+        if(localStorage.getItem("accessToken")){
+            setAccessToken(JSON.parse(localStorage.getItem("accessToken")))
+        }
+        if(localStorage.getItem("expire")){
+            setExpire(JSON.parse(localStorage.getItem("expire")))
+        }
+    }, [])
+
+    useEffect(() => {
+        if(localStorage.getItem("isLoggedIn")){
+            localStorage.removeItem("isLoggedIn")
+            localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
+        } else {
+            localStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
+        }
+    }, [isLoggedIn])
+
+    useEffect(() => {
+        if(localStorage.getItem("userTariff")){
+            localStorage.removeItem("userTariff")
+            localStorage.setItem("userTariff", JSON.stringify(userTariff));
+        } else {
+            localStorage.setItem("userTariff", JSON.stringify(userTariff));
+        }
+    }, [userTariff])
+
+    useEffect(() => {
+        if(localStorage.getItem("accessToken")){
+            localStorage.removeItem("accessToken")
+            localStorage.setItem("accessToken", JSON.stringify(accessToken));
+        } else {
+            localStorage.setItem("accessToken", JSON.stringify(accessToken));
+        }
+
+        if(localStorage.getItem("expire")){
+            localStorage.removeItem("expire")
+            localStorage.setItem("expire", JSON.stringify(expire));
+        } else {
+            localStorage.setItem("expire", JSON.stringify(expire));
+        }
+    }, [accessToken, expire])
+
+
 
     return <AuthContext.Provider value={
         {
             isLoggedIn,
-            setIsLoggedIn
+            setIsLoggedIn,
+            userTariff,
+            setUserTariff,
+            accessToken,
+            setAccessToken,
+            expire,
+            setExpire,
         }
     }>
         {children}

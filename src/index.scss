@@ -13,13 +13,24 @@
 }
 
 
-$color-green: #029491;
-$color-black: #000;
-$color-white: #fff;
-$color-orange: #FFB64F;
-$color-turquoise: #7CE3E1;
-$color-blue: #040d54;
+$color-green: rgba(2, 148, 145, 1);
+$color-black: rgba(0, 0, 0, 1);
+$color-white: rgba(255, 255, 255, 1);
+$color-orange: rgba(255, 182, 79, 1);
+$color-turquoise: rgba(124, 227, 225, 1);
+$color-blue: rgba(89, 112, 255, 1);
 $color-error: #FF5959;
+
+:export {
+  colorGreen: $color-green;
+  colorBlack: $color-black;
+  colorWhite: $color-white;
+  colorOrange: $color-orange;
+  colorTurquoise: $color-turquoise;
+  colorBlue: $color-blue;
+  colorError: $color-error;
+}
+
 $full-width: 1440px;
 
 //$min-height-main-container: calc(100vh - 120px - 122px);

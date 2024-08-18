@@ -1,9 +1,10 @@
 import React from 'react';
+import styles from "../MyButtonBlue/MyButtonBlue.module.scss";
 
-function MyButtonBlue(props) {
+export default function MyButtonBlue({children, ...props}) {
     return (
-        <div></div>
+        <button className={styles.myBtn} {...props}>
+            {children}
+        </button>
     );
-}
-
-export default MyButtonBlue;
+};

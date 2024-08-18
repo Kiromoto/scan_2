@@ -1,0 +1,142 @@
+@import "../../../../index";
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 70px 10px 0 10px;
+  flex-shrink: 0;
+
+  .cardContainer {
+    border: white solid 1px;
+    padding: 0;
+    margin: 10px 0 10px 15px;
+    width: 400px;
+    height: 225px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+
+
+    .cardImage {
+      margin: 30px 0 0 20px;
+      height: 64px;
+    }
+
+    .cardText {
+      margin: 30px 0 0 20px;
+
+      color: $color-black;
+      font-family: Inter;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.18px;
+    }
+
+
+  }
+
+
+
+  //.slider {
+  //
+  //  .sliderCard {
+  //    width: 400px;
+  //    height: 225px;
+  //    gap: 0;
+  //    flex-shrink: 0;
+  //    border-radius: 10px;
+  //    padding: 0 0 0 30px;
+  //    margin: 0 0 20px 10px;
+  //    opacity: 0;
+  //    box-sizing: border-box;
+  //    //background: rgba(255, 255, 255, 1);
+  //    background: orangered;
+  //    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  //
+  //
+  //    .cardImg {
+  //      width: 65px;
+  //      height: 79px;
+  //      flex-shrink: 0;
+  //      margin: 22px 0 0 19px;
+  //    }
+  //
+  //    .cardSection {
+  //      margin: 1019px 0 0 20px;
+  //      width: 313px;
+  //
+  //      color: $color-black;
+  //      font-family: Inter;
+  //      font-size: 18px;
+  //      font-style: normal;
+  //      font-weight: 400;
+  //      line-height: normal;
+  //      letter-spacing: 0.18px;
+  //    }
+  //
+  //
+  //  }
+  //
+  //
+  //
+  //
+  //}
+
+}
+
+
+
+
+//.slider {
+//  margin: 70px 0 0 0;
+//  flex-shrink: 0;
+//  width: 96%;
+//
+//  .slider-card {
+//    width: 400px;
+//    height: 225px;
+//    flex-shrink: 0;
+//    border-radius: 10px;
+//    padding: 0 0 0 30px;
+//    margin: 0 0 20px 10px;
+//    background: #FFF;
+//    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.20);
+//
+//    box-sizing: border-box;
+//
+//
+//    .card-img {
+//      width: 65px;
+//      height: 79px;
+//      flex-shrink: 0;
+//      margin: 22px 0 0 19px;
+//
+//    }
+//
+//    .card-section {
+//      margin: 12px 0 0 20px;
+//      width: 313px;
+//
+//      color: $color-black;
+//      font-family: Inter;
+//      font-size: 18px;
+//      font-style: normal;
+//      font-weight: 400;
+//      line-height: normal;
+//      letter-spacing: 0.18px;
+//
+//
+//    }
+//
+//
+//  }
+//
+//}
+
+.slick-next:before {
+  content: url('../../../../assets/images/Main/carousel/right-chevron.svg');
+}
+
+

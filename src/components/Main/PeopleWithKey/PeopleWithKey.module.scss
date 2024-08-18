@@ -1,0 +1,21 @@
+@import "../../../index";
+
+
+.container {
+  margin: 69px 0 0 60px;
+
+  .title {
+    width: 817px;
+    color: $color-black;
+
+    font-family: Ferry;
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+  }
+
+  .image {
+    margin: 10px 0 0 110px;
+  }
+
+}

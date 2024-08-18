@@ -1,0 +1,25 @@
+@import "../../../index";
+
+.container {
+  height: 664px;
+  margin: 107px 60px 118px 60px;
+
+  .title {
+    height: 54px;
+    color: $color-black;
+    font-family: Ferry;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: 0.45px;
+  }
+
+  .cardsContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 70px 0 0 0;
+
+  }
+
+}

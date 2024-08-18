@@ -1,0 +1,67 @@
+@import-normalize;
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
+  font-family: "Ferry";
+  src: url("assets/fonts/Ferry-Black.eot");
+  src: local("Ferry Black"), local("Ferry-Black"), url("assets/fonts/Ferry-Black.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Ferry-Black.woff") format("woff"), url("assets/fonts/Ferry-Black.ttf") format("truetype");
+}
+:export {
+  colorGreen: rgb(2, 148, 145);
+  colorBlack: rgb(0, 0, 0);
+  colorWhite: rgb(255, 255, 255);
+  colorOrange: rgb(255, 182, 79);
+  colorTurquoise: rgb(124, 227, 225);
+  colorBlue: rgb(89, 112, 255);
+  colorError: #FF5959;
+}
+
+body {
+  margin: 0 0 0 calc((100vw - 1440px) / 2);
+  padding: 0;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 214px;
+  width: 1298px;
+  margin: 24px 0 0 60px;
+}
+.container .textBox {
+  display: flex;
+  flex-direction: column;
+  width: 817px;
+}
+.container .textBox .title {
+  margin: 45px 0 0 0;
+  font-family: Ferry;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+}
+.container .textBox .textInfo {
+  width: 534px;
+  margin: 25px 0 0 0;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24.2px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+.container .imgBox .documentImg {
+  margin: 108px 0 0 61px;
+  width: 91px;
+  height: 111px;
+}
+.container .imgBox .foldersImg {
+  margin: 126px 0 0 166px;
+  width: 141px;
+  height: 69px;
+}
+
+/*# sourceMappingURL=TitleSearch.module.css.map */

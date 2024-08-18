@@ -1,0 +1,88 @@
+@import "../../../index";
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 872px;
+  height: 543px;
+  border-radius: 10px 0px 0px 0px;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+
+  .leftSide {
+    width: calc(372px + 44px);
+    margin: 21px 0 0 44px;
+
+    .inputTitle {
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 21.78px;
+      letter-spacing: 0.03em;
+      text-align: left;
+
+      margin: 0 0 5px 0;
+    }
+
+    .mySelect {
+      width: 242px;
+      height: 43px;
+      border-radius: 5px;
+      border: 1px solid rgba(199, 199, 199, 1);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+      margin: 15px 0 30px 0;
+
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.94px;
+      letter-spacing: 0.03em;
+      text-align: center;
+
+
+      .myOption {
+        font-family: Inter;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.94px;
+        letter-spacing: 0.03em;
+
+      }
+
+
+
+
+    }
+
+    .dateBox {
+      display: flex;
+      flex-direction: row;
+
+    }
+
+  }
+
+  .rightSide {
+    display: flex;
+    flex-direction: column;
+    margin: 36px 0 0 11px;
+
+    .requiredFieldsMsg {
+      width: 259px;
+      height: 17px;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.94px;
+      letter-spacing: 0.03em;
+      text-align: left;
+      color: rgba(148, 148, 148, 1);
+      margin: 10px 0 0 42px;
+    }
+
+  }
+
+
+
+}

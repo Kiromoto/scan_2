@@ -1,0 +1,42 @@
+@import-normalize;
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
+  font-family: "Ferry";
+  src: url("assets/fonts/Ferry-Black.eot");
+  src: local("Ferry Black"), local("Ferry-Black"), url("assets/fonts/Ferry-Black.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Ferry-Black.woff") format("woff"), url("assets/fonts/Ferry-Black.ttf") format("truetype");
+}
+:export {
+  colorGreen: rgb(2, 148, 145);
+  colorBlack: rgb(0, 0, 0);
+  colorWhite: rgb(255, 255, 255);
+  colorOrange: rgb(255, 182, 79);
+  colorTurquoise: rgb(124, 227, 225);
+  colorBlue: rgb(89, 112, 255);
+  colorError: #FF5959;
+}
+
+body {
+  margin: 0 0 0 calc((100vw - 1440px) / 2);
+  padding: 0;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  margin: 69px 0 0 60px;
+}
+.container .title {
+  width: 817px;
+  color: rgb(0, 0, 0);
+  font-family: Ferry;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.8px;
+}
+.container .image {
+  margin: 10px 0 0 110px;
+}
+
+/*# sourceMappingURL=PeopleWithKey.module.css.map */

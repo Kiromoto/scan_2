@@ -1,0 +1,92 @@
+@import-normalize;
+@font-face {
+  font-family: "Inter", sans-serif;
+  src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
+  font-family: "Ferry";
+  src: url("assets/fonts/Ferry-Black.eot");
+  src: local("Ferry Black"), local("Ferry-Black"), url("assets/fonts/Ferry-Black.eot?#iefix") format("embedded-opentype"), url("assets/fonts/Ferry-Black.woff") format("woff"), url("assets/fonts/Ferry-Black.ttf") format("truetype");
+}
+:export {
+  colorGreen: rgb(2, 148, 145);
+  colorBlack: rgb(0, 0, 0);
+  colorWhite: rgb(255, 255, 255);
+  colorOrange: rgb(255, 182, 79);
+  colorTurquoise: rgb(124, 227, 225);
+  colorBlue: rgb(89, 112, 255);
+  colorError: #FF5959;
+}
+
+body {
+  margin: 0 0 0 calc((100vw - 1440px) / 2);
+  padding: 0;
+  width: 1440px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 429px;
+  height: 523px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(199, 199, 199);
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .loginRegisrationBox {
+  display: flex;
+  flex-direction: row;
+  width: 379px;
+  height: 29px;
+  margin: 25px 25px 0 25px;
+}
+.container .loginRegisrationBox .lgContainer {
+  display: flex;
+  flex-direction: column;
+}
+.container .loginRegisrationBox .lgContainer:last-child {
+  margin: 0 0 0 15px;
+}
+.container .loginRegisrationBox .lgContainer .lineLgContainer {
+  height: 2px;
+  margin: 6px 0 0 0;
+  background: rgb(2, 148, 145);
+}
+.container .inputBox {
+  display: flex;
+  flex-direction: column;
+  height: 174px;
+  width: 379px;
+  border-radius: 5px;
+  margin: 40px 25px 0 25px;
+}
+.container .inputBox .inputForm {
+  display: flex;
+  flex-direction: column;
+  width: 379px;
+}
+.container .inputBox .inputForm .inputTitle {
+  margin: 0;
+  padding: 0;
+  font-family: Inter;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.36px;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+.container .inputBox .resumeLink {
+  margin: 15px 0 0 0;
+  align-self: center;
+  font-family: Inter;
+  margin-top: 15px;
+  color: #5970FF;
+  font-size: 14px;
+  letter-spacing: 2%;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=LoginForm.module.css.map */
