@@ -12,10 +12,14 @@ export const AuthContext = createContext({
 });
 
 export const AuthProvider = ({children}) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") ? JSON.parse(localStorage.getItem("isLoggedIn")) : false);
-    const [userTariff, setUserTariff] = useState(localStorage.getItem("userTariff") ? JSON.parse(localStorage.getItem("userTariff")) : 1);
-    const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken") ? JSON.parse(localStorage.getItem("accessToken")) : null);
-    const [expire, setExpire] = useState(localStorage.getItem("expire") ? JSON.parse(localStorage.getItem("expire")) : null);
+    // const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("isLoggedIn") ? JSON.parse(localStorage.getItem("isLoggedIn")) : false);
+    // const [userTariff, setUserTariff] = useState(localStorage.getItem("userTariff") ? JSON.parse(localStorage.getItem("userTariff")) : 1);
+    // const [accessToken, setAccessToken] = useState(localStorage.getItem("accessToken") ? JSON.parse(localStorage.getItem("accessToken")) : null);
+    // const [expire, setExpire] = useState(localStorage.getItem("expire") ? JSON.parse(localStorage.getItem("expire")) : null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userTariff, setUserTariff] = useState(1);
+    const [accessToken, setAccessToken] = useState(null);
+    const [expire, setExpire] = useState(null);
 
     useEffect(() => {
         if(localStorage.getItem("expire")){
