@@ -18,18 +18,35 @@ export const AuthProvider = ({children}) => {
     const [expire, setExpire] = useState(localStorage.getItem("expire") ? JSON.parse(localStorage.getItem("expire")) : null);
 
     useEffect(() => {
-        if(localStorage.getItem("isLoggedIn")){
-            setIsLoggedIn(JSON.parse(localStorage.getItem("isLoggedIn")))
-        }
-        if(localStorage.getItem("userTariff")){
-            setUserTariff(parseInt(JSON.parse(localStorage.getItem("userTariff"))))
-        }
-        if(localStorage.getItem("accessToken")){
-            setAccessToken(JSON.parse(localStorage.getItem("accessToken")))
-        }
         if(localStorage.getItem("expire")){
-            setExpire(JSON.parse(localStorage.getItem("expire")))
+            const inMemory = new Date(JSON.parse(localStorage.getItem("expire")))
+            const now = new Date();
+            // console.log(inMemory, "inMemory < now", now, (inMemory < now))
+            if (inMemory < now) {
+                localStorage.removeItem("accessToken")
+                localStorage.removeItem("expire")
+                localStorage.removeItem("isLoggedIn");
+                setIsLoggedIn(false)
+                setAccessToken(null)
+                setExpire(null)
+            }
+            else
+            {
+                setExpire(JSON.parse(localStorage.getItem("expire")))
+
+                if(localStorage.getItem("isLoggedIn")){
+                    setIsLoggedIn(JSON.parse(localStorage.getItem("isLoggedIn")))
+                }
+                if(localStorage.getItem("userTariff")){
+                    setUserTariff(parseInt(JSON.parse(localStorage.getItem("userTariff"))))
+                }
+                if(localStorage.getItem("accessToken")){
+                    setAccessToken(JSON.parse(localStorage.getItem("accessToken")))
+                }
+            }
+
         }
+
     }, [])
 
     useEffect(() => {

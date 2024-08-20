@@ -4,10 +4,8 @@ import MyInput from "../../UI/MyInput/MyInput";
 import MyCheckbox from "../../UI/MyCheckbox/MyCheckbox";
 import MyButtonBlue from "../../UI/MyButtonBlue/MyButtonBlue";
 import MyDateInput from "../../UI/MyDateInput/MyDateInput";
-import {Link, Navigate, useNavigate} from "react-router-dom";
-import SearchPage from "../../../pages/SearchPage/SearchPage";
-import ResultPage from "../../../pages/ResultPage/ResultPage";
-import {validateInn} from "../../../utils/services/validationInn";
+import {useNavigate} from "react-router-dom";
+import {validateDateRange, validateInn, validateLimit} from "../../../utils/services/validation";
 
 
 function SearchForm() {
@@ -17,12 +15,14 @@ function SearchForm() {
         innError: false,
         innErrorText: '',
         tonality: "any",
-        limit: null,
+        limit: "",
         limitError: false,
-        startDate: null,
+        limitErrorText: '',
+        startDate: "",
         startDateError: false,
-        endDate: null,
+        endDate: "",
         endDateError: false,
+        dateErrorText: "",
         maxFullness: false,
         inBusinessNews: false,
         onlyMainRole: false,
@@ -34,23 +34,21 @@ function SearchForm() {
         isValidData: false,
     });
 
+
     useEffect(() => {
-        if (searchParams.inn.length === 10 || searchParams.inn.length === 12) {
-            let resultValidate = validateInn(searchParams.inn);
-            if (resultValidate) {
-                setSearchParams(
-                    {
-                        ...searchParams,
-                        opacityLoginBtn: 0.5,
-                        isValidData: false,
-                        innError: true,
-                        innErrorText: resultValidate,
-                    })
-            }
+        if (
+            (searchParams.inn && !searchParams.innError) &&
+            (searchParams.limit && !searchParams.limitError) &&
+            (searchParams.startDate && !searchParams.startDateError) &&
+            (searchParams.endDate && !searchParams.endDateError)
+        ) {
+            setSearchParams(
+                {
+                    ...searchParams,
+                    opacityLoginBtn: 1,
+                    isValidData: true,
+                })
         }
-
-
-
     }, [searchParams.inn, searchParams.limit, searchParams.startDate, searchParams.endDate]);
 
 
@@ -58,6 +56,71 @@ function SearchForm() {
     const doSearch = (event) => {
         event.preventDefault();
         navigate('/result', {state: {searchParams: searchParams}});
+    }
+
+    const checkValidInn = (inn) => {
+        let resultValidate = validateInn(inn);
+        if (resultValidate) {
+            setSearchParams(
+                {
+                    ...searchParams,
+                    opacityLoginBtn: 0.5,
+                    isValidData: false,
+                    innError: true,
+                    innErrorText: resultValidate,
+                })
+        } else {
+            setSearchParams(
+                {
+                    ...searchParams,
+                    innError: false,
+                    innErrorText: '',
+                })
+        }
+    }
+
+    const checkValidLimit = (limit) => {
+        let resultValidate = validateLimit(limit);
+        if (resultValidate) {
+            setSearchParams(
+                {
+                    ...searchParams,
+                    opacityLoginBtn: 0.5,
+                    isValidData: false,
+                    limitError: true,
+                    limitErrorText: resultValidate,
+                })
+        } else {
+            setSearchParams(
+                {
+                    ...searchParams,
+                    limitError: false,
+                    limitErrorText: '',
+                })
+        }
+    }
+
+    const checkValidDateRange = (startDate, endDate) => {
+        let resultValidate = validateDateRange(startDate, endDate);
+        if (resultValidate) {
+            setSearchParams(
+                {
+                    ...searchParams,
+                    opacityLoginBtn: 0.5,
+                    isValidData: false,
+                    startDateError: true,
+                    endDateError: true,
+                    dateErrorText: resultValidate,
+                })
+        } else {
+            setSearchParams(
+                {
+                    ...searchParams,
+                    startDateError: false,
+                    endDateError: false,
+                    dateErrorText: resultValidate,
+                })
+        }
     }
 
     return (
@@ -69,20 +132,21 @@ function SearchForm() {
                     value={searchParams.inn}
                     type="text"
                     imputmode="numeric"
-                    minlength="10"
-                    maxlength="10"
+                    minLength="10"
+                    maxLength="10"
                     error={searchParams.innError}
                     errorMsg={searchParams.innErrorText}
                     placeholder="10 цифр"
                     style={{fontSize: 14, textAlign: "center", width: 220,}}
                     onChange={e => (setSearchParams({...searchParams, inn: e.target.value}))}
+                    onBlur={e => checkValidInn(e.target.value)}
                 />
 
                 <p className={styles.inputTitle}>Тональность</p>
                 <select
+                    name="tonality"
                     className={styles.mySelect}
                     value={searchParams.tonality}
-                    defaultValue="any"
                     onChange={(e) => {
                         setSearchParams({...searchParams, tonality: e.target.value})
                     }}>
@@ -97,18 +161,18 @@ function SearchForm() {
                     value={searchParams.limit}
                     type="number"
                     imputmode="numeric"
-                    minlength="1"
-                    maxlength="4"
-                    min="0"
+                    minLength="1"
+                    maxLength="4"
+                    min="1"
                     max="1000"
                     error={searchParams.limitError}
-                    errorMsg="Обязательное поле"
-                    // errorMsg="Введите корректные данные"
+                    errorMsg={searchParams.limitErrorText}
                     placeholder="от 1 до 1000"
                     style={{fontSize: 14, textAlign: "center", width: 220}}
                     onChange={e => {
                         setSearchParams({...searchParams, limit: e.target.value})
                     }}
+                    onBlur={e => checkValidLimit(e.target.value)}
                 />
                 <p className={styles.inputTitle}>Диапазон поиска *</p>
                 <div className={styles.dateBox}>
@@ -117,9 +181,11 @@ function SearchForm() {
                         type="date"
                         value={searchParams.startDate}
                         placeholder="Дата начала"
+                        error={searchParams.startDateError}
                         onChange={(e) => {
                             setSearchParams({...searchParams, startDate: e.target.value})
                         }}
+                        onBlur={e => checkValidDateRange(e.target.value, searchParams.endDate)}
                     />
 
                     <MyDateInput
@@ -127,14 +193,19 @@ function SearchForm() {
                         type="date"
                         value={searchParams.endDate}
                         style={{marginLeft: 20}}
+                        error={searchParams.endDateError}
                         placeholder="Дата конца"
                         onChange={(e) => {
                             setSearchParams({...searchParams, endDate: e.target.value})
                         }}
+                        onBlur={e => checkValidDateRange(searchParams.startDate, e.target.value)}
                     />
-
                 </div>
-
+                {(searchParams.startDateError || searchParams.endDateError) ?
+                    <span className={styles.errorDateSpan}>{searchParams.dateErrorText}</span> :
+                    <span className={styles.errorDateSpan}></span>
+                }
+                <span className={styles.errorDateSpan}></span>
 
             </div>
             <div className={styles.rightSide}>
