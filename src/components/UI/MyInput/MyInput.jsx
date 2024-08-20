@@ -13,7 +13,7 @@ function MyInput({error, errorMsg, ...props}) {
             {
                 error
                     ?
-                    <div className={styles.errorArea}>{errorMsg}</div>
+                    <div className={styles.errorArea} style={{width: props.style.width}}>{errorMsg}</div>
                     :
                     <div className={styles.errorArea}></div>
             }

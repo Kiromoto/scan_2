@@ -6,6 +6,7 @@ import MyButtonBlue from "../../UI/MyButtonBlue/MyButtonBlue";
 import MyDateInput from "../../UI/MyDateInput/MyDateInput";
 import {useNavigate} from "react-router-dom";
 import {validateDateRange, validateInn, validateLimit} from "../../../utils/services/validation";
+import * as sea from "node:sea";
 
 
 function SearchForm() {
@@ -36,21 +37,30 @@ function SearchForm() {
 
 
     useEffect(() => {
-        if (
-            (searchParams.inn && !searchParams.innError) &&
-            (searchParams.limit && !searchParams.limitError) &&
-            (searchParams.startDate && !searchParams.startDateError) &&
-            (searchParams.endDate && !searchParams.endDateError)
-        ) {
-            setSearchParams(
-                {
-                    ...searchParams,
-                    opacityLoginBtn: 1,
-                    isValidData: true,
-                })
-        }
-    }, [searchParams.inn, searchParams.limit, searchParams.startDate, searchParams.endDate]);
-
+            if (
+                (searchParams.inn && !searchParams.innError) &&
+                (searchParams.limit && !searchParams.limitError) &&
+                (searchParams.startDate && !searchParams.startDateError) &&
+                (searchParams.endDate && !searchParams.endDateError)
+            ) {
+                setSearchParams(
+                    {
+                        ...searchParams,
+                        opacityLoginBtn: 1,
+                        isValidData: true,
+                    })
+            }
+        }, [
+            searchParams.inn,
+            // searchParams.innError,
+            searchParams.limit,
+            // searchParams.limitError,
+            searchParams.startDate,
+            // searchParams.startDateError,
+            searchParams.endDate,
+            // searchParams.endDateError
+        ]
+    );
 
 
     const doSearch = (event) => {
@@ -219,7 +229,10 @@ function SearchForm() {
                 <MyCheckbox
                     name="inBusinessNews"
                     checked={searchParams.inBusinessNews}
-                    setChecked={() => (setSearchParams({...searchParams, inBusinessNews: !searchParams.inBusinessNews}))}
+                    setChecked={() => (setSearchParams({
+                        ...searchParams,
+                        inBusinessNews: !searchParams.inBusinessNews
+                    }))}
                 >Упоминания в бизнес-контексте
                 </MyCheckbox>
 
@@ -233,35 +246,49 @@ function SearchForm() {
                 <MyCheckbox
                     name="onlyWithRiskFactors"
                     checked={searchParams.onlyWithRiskFactors}
-                    setChecked={() => (setSearchParams({...searchParams, onlyWithRiskFactors: !searchParams.onlyWithRiskFactors}))}
+                    setChecked={() => (setSearchParams({
+                        ...searchParams,
+                        onlyWithRiskFactors: !searchParams.onlyWithRiskFactors
+                    }))}
                 >Публикация только с риск-факторами
                 </MyCheckbox>
 
                 <MyCheckbox
                     name="excludeTechNews"
                     checked={!searchParams.excludeTechNews}
-                    setChecked={() => (setSearchParams({...searchParams, excludeTechNews: !searchParams.excludeTechNews}))}
+                    setChecked={() => (setSearchParams({
+                        ...searchParams,
+                        excludeTechNews: !searchParams.excludeTechNews
+                    }))}
                 >Включать технические новости рынка
                 </MyCheckbox>
 
                 <MyCheckbox
                     name="excludeAnnouncements"
                     checked={!searchParams.excludeAnnouncements}
-                    setChecked={() => (setSearchParams({...searchParams, excludeAnnouncements: !searchParams.excludeAnnouncements}))}
+                    setChecked={() => (setSearchParams({
+                        ...searchParams,
+                        excludeAnnouncements: !searchParams.excludeAnnouncements
+                    }))}
                 >Включать анонсы и календари
                 </MyCheckbox>
 
                 <MyCheckbox
                     name="excludeDigests"
                     checked={!searchParams.excludeDigests}
-                    setChecked={() => (setSearchParams({...searchParams, excludeDigests: !searchParams.excludeDigests}))}
+                    setChecked={() => (setSearchParams({
+                        ...searchParams,
+                        excludeDigests: !searchParams.excludeDigests
+                    }))}
                 >Включать сводки новостей
                 </MyCheckbox>
 
                 <MyButtonBlue
                     style={{marginTop: 117, marginLeft: 41, width: 305, opacity: searchParams.opacityLoginBtn}}
                     disabled={!(searchParams.isValidData)}
-                    onClick={(e) => {doSearch(e)}}
+                    onClick={(e) => {
+                        doSearch(e)
+                    }}
                 >Поиск</MyButtonBlue>
                 <p className={styles.requiredFieldsMsg}>* Обязательные к заполнению поля</p>
             </div>

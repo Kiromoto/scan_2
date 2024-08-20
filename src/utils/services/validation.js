@@ -10,9 +10,9 @@ export function validateInn(inn, error = {}) {
     if (inn.length === 0) {
         return 'Введите ИНН'
     } else if (/[^0-9]/.test(inn)) {
-        return 'ИНН может состоять только из цифр'
+        return 'Введите корректные данные'
     } else if (inn.length < 10 || inn.length === 11 || inn.length > 12) {
-        return 'ИНН может состоять только из 10 или 12 цифр';
+        return 'Введите корректные данные';
     }
 
     return resultError;
@@ -24,12 +24,12 @@ export function validateLimit(limit) {
 
     if (typeof Number(limit) === 'number') {
         if (limit < 1) {
-            return 'Лимит должен быть положительным числом'
+            return 'Введите корректные данные'
         } else if (limit > 1000) {
-            return 'Лимит не может быть больше 1000'
+            return 'Введите корректные данные'
         }
     } else {
-        return 'Лимит должен быть положительным числом'
+        return 'Введите корректные данные'
     }
 
 
@@ -43,9 +43,13 @@ export function validateDateRange(startDate, endDate) {
     if (startDate && endDate) {
         startDate = new Date(startDate)
         endDate = new Date(endDate)
+        const now = new Date()
 
         console.log("validateDateRange", startDate, endDate)
-        if (startDate > endDate) {
+        if ((startDate > now) || (endDate > now)) {
+            return 'Введите корректные данные'
+        }
+        else if (startDate > endDate) {
             return 'Введите корректные данные'
         }
 
