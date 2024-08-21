@@ -46,18 +46,17 @@ export function validateDateRange(startDate, endDate) {
         const now = new Date()
 
         console.log("validateDateRange", startDate, endDate)
+        console.log("new Date()", now)
         if ((startDate > now) || (endDate > now)) {
             return 'Введите корректные данные'
-        }
-        else if (startDate > endDate) {
+        } else if (startDate > endDate) {
             return 'Введите корректные данные'
         }
 
-    }
-    else if (!startDate) {
+    } else if (!startDate) {
         return 'Введите корректные данные'
+    } else if (!endDate) {
     }
-    else if (!endDate) {}
 
     return resultError;
 }

@@ -6,22 +6,22 @@ import MyButtonBlue from "../../UI/MyButtonBlue/MyButtonBlue";
 import MyDateInput from "../../UI/MyDateInput/MyDateInput";
 import {useNavigate} from "react-router-dom";
 import {validateDateRange, validateInn, validateLimit} from "../../../utils/services/validation";
-import * as sea from "node:sea";
+
 
 
 function SearchForm() {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useState({
-        inn: "",
+        inn: "7710137066",
         innError: false,
         innErrorText: '',
         tonality: "any",
-        limit: "",
+        limit: 100,
         limitError: false,
         limitErrorText: '',
-        startDate: "",
+        startDate: "2024-08-01",
         startDateError: false,
-        endDate: "",
+        endDate: "2024-08-21",
         endDateError: false,
         dateErrorText: "",
         maxFullness: false,
@@ -52,13 +52,13 @@ function SearchForm() {
             }
         }, [
             searchParams.inn,
-            // searchParams.innError,
+            searchParams.innError,
             searchParams.limit,
-            // searchParams.limitError,
+            searchParams.limitError,
             searchParams.startDate,
-            // searchParams.startDateError,
+            searchParams.startDateError,
             searchParams.endDate,
-            // searchParams.endDateError
+            searchParams.endDateError
         ]
     );
 
@@ -170,7 +170,7 @@ function SearchForm() {
                     name="limit"
                     value={searchParams.limit}
                     type="number"
-                    imputmode="numeric"
+                    // imputmode="numeric"
                     minLength="1"
                     maxLength="4"
                     min="1"

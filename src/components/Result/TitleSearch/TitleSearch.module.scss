@@ -1,0 +1,39 @@
+@import "../../../index";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 376px;
+  margin: 0 0 0 60px;
+
+  .text {
+    margin: 69px 0 0 0;
+    width: 509px;
+
+    .textFindSoon {
+      font-family: 'Ferry', Arial, Helvetica, sans-serif;
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: 4%;
+      font-weight: 900;
+    }
+
+    .textNeedTime {
+      width: 447px;
+      margin: 36px 0 0 0;
+
+      color: #000;
+      font-family: Inter;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.2px;
+    }
+  }
+
+  .img {
+    margin: 25px 0 0 215px;
+  }
+
+}
