@@ -42,7 +42,7 @@ function Carousel(props) {
         slidesToShow: slidesToShow,
         slidesToScroll: 1,
         swipeToSlide: true,
-        className: "slider",
+        className: "center",
         centerPadding: "60px",
 
         nextArrow: <RightArrow/>,

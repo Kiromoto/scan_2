@@ -1,0 +1,15 @@
+@import "../../../index";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 641px;
+  height: 694px;
+
+  padding: 19px 30px 35px 30px;
+  background: #8AC540;
+  gap: 0;
+  border-radius: 10px;
+  opacity: 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}

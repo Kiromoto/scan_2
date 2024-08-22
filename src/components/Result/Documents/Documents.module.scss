@@ -1,0 +1,26 @@
+@import "../../../index";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1346px;
+  height: 260px;
+  margin: 107px 60px 109px 60px;
+
+  .title {
+    font-family: Ferry;
+    font-size: 30px;
+    font-weight: 900;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
+
+  .documentsBox {
+    //display: grid;
+    //grid-template-columns: repeat(2, 1fr);
+    //column-gap: 19px;
+    //row-gap: 19px;
+  }
+
+}

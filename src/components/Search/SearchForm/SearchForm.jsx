@@ -19,7 +19,7 @@ function SearchForm() {
         limit: 100,
         limitError: false,
         limitErrorText: '',
-        startDate: "2024-08-01",
+        startDate: "2010-08-01",
         startDateError: false,
         endDate: "2024-08-21",
         endDateError: false,
