@@ -9,65 +9,7 @@ import Loading from "../../UI/Loading/Loading";
 import {getTotalRisk} from "../../../utils/services/getTotalRisk";
 
 
-function Histogram({searchParams, ...props}) {
-    const inputData = {
-        "issueDateInterval": {
-            "startDate": new Date(searchParams.startDate).toJSON(),
-            "endDate": new Date(searchParams.endDate).toJSON()
-        },
-        "searchContext": {
-            "targetSearchEntitiesContext": {
-                "targetSearchEntities": [
-                    {
-                        "type": "company",
-                        "sparkId": null,
-                        "entityId": null,
-                        "inn": searchParams.inn,
-                        "maxFullness": searchParams.maxFullness,
-                        "inBusinessNews": searchParams.inBusinessNews
-                    }
-                ],
-                "onlyMainRole": searchParams.onlyMainRole,
-                "tonality": searchParams.tonality,
-                "onlyWithRiskFactors": searchParams.onlyWithRiskFactors,
-                "riskFactors": {
-                    "and": [],
-                    "or": [],
-                    "not": []
-                },
-                "themes": {
-                    "and": [],
-                    "or": [],
-                    "not": []
-                }
-            },
-            "themesFilter": {
-                "and": [],
-                "or": [],
-                "not": []
-            }
-        },
-        "searchArea": {
-            "includedSources": [],
-            "excludedSources": [],
-            "includedSourceGroups": [],
-            "excludedSourceGroups": []
-        },
-        "attributeFilters": {
-            "excludeTechNews": searchParams.excludeTechNews,
-            "excludeAnnouncements": searchParams.excludeAnnouncements,
-            "excludeDigests": searchParams.excludeDigests
-        },
-        "similarMode": "duplicates",
-        "limit": searchParams.limit,
-        "sortType": "sourceInfluence",
-        "sortDirectionType": "desc",
-        "intervalType": "month",
-        "histogramTypes": [
-            "totalDocuments",
-            "riskFactors"
-        ]
-    }
+function Histogram({inputData, ...props}) {
     const {accessToken, expire} = useAuth()
     const [data, setData] = useState({})
     const [isLoading, setIsLoading] = useState(true)
@@ -88,7 +30,7 @@ function Histogram({searchParams, ...props}) {
             console.log('Get riskFactor info is ERROR: ', err)
         })
 
-    }, [searchParams]);
+    }, [inputData]);
 
 
     function LeftArrow(props) {

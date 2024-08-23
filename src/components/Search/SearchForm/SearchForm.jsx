@@ -8,7 +8,6 @@ import {useNavigate} from "react-router-dom";
 import {validateDateRange, validateInn, validateLimit} from "../../../utils/services/validation";
 
 
-
 function SearchForm() {
     const navigate = useNavigate();
     const [searchParams, setSearchParams] = useState({
@@ -16,7 +15,7 @@ function SearchForm() {
         innError: false,
         innErrorText: '',
         tonality: "any",
-        limit: 100,
+        limit: 12,
         limitError: false,
         limitErrorText: '',
         startDate: "2010-08-01",

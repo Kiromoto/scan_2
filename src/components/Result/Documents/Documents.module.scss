@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   width: 1346px;
-  height: 260px;
   margin: 107px 60px 109px 60px;
 
   .title {
@@ -17,10 +16,23 @@
   }
 
   .documentsBox {
-    //display: grid;
-    //grid-template-columns: repeat(2, 1fr);
-    //column-gap: 19px;
-    //row-gap: 19px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 641px);
+    column-gap: 38px;
+    row-gap: 38px;
+    
+    margin: 58px 0 0 0;
+  }
+  
+  .noDocuments {
+    font-family: Ferry;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+    text-align: center;
+  
   }
 
 }
