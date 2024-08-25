@@ -11,6 +11,7 @@ function PublicationCards({item, ...props}) {
           </div>
           <span className={styles.title}>{item.ok.title.text}</span>
           <MyAttributesLable attribut={item.ok.attributes}/>
+            <img className={styles.picture} src="https://storage.scan-interfax.ru/images/1%3A0JPQqdGM0JNWCdCzf2Jt0LHQotGV0ZUh0ZbRlBXCt0Je0JHQruKAnDcUXkZQ0YvQscKn0KjQlsKu0K%2FSkdGXfOKAsF3QkjrRnCRmGCFFBybQoNGL0ZMhEFkC4oCYaNC9a9GO0KFYwqwOeNGO0JdUDGzihKJXTNC%2B0ZzRinE%3D" />
           
         </div>
     );
