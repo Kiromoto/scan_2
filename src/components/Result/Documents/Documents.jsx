@@ -1,67 +1,83 @@
 import React, {useEffect, useState} from 'react';
 import styles from './Documents.module.scss'
-import PublicationCards from "../PublicationCards/PublicationCards";
 import MyButtonBlue from "../../UI/MyButtonBlue/MyButtonBlue";
-import axios from "axios";
 import {useAuth} from "../../../hooks/useAuth";
+import Loading from "../../UI/Loading/Loading";
+import axios from "axios";
+import PublicationCards from "../PublicationCards/PublicationCards";
 
 
-function Documents({inputData, ...props}) {
+function Documents({objects, ...props}) {
 	const {accessToken, expire} = useAuth()
-	const [objects, setObjects] = useState()
-	const [docs, setDocs] = useState()
-	let ids = []
+	const [data, setData] = useState([])
+	const [isLoading, setIsLoading] = useState(true)
+	const [currentStart, setCurrentStart] = useState(0)
+	const [currentEnd, setCurrentEnd] = useState(10)
+	const [showMore, setShowMore] = useState(objects.length > 10)
 	
 	
 	useEffect(() => {
+		setIsLoading(true)
+		let ids = []
+		
 		if (objects) {
-			objects.map(item => {
+			objects.slice(currentStart, currentEnd).map(item => {
 				ids.push(item.encodedId)
 			})
-			ids = {ids: ids}
 		}
-
+		
 		if (ids) {
-			axios.post('https://gateway.scan-interfax.ru/api/v1/documents',
-				ids, {
+			axios.post('https://gateway.scan-interfax.ru/api/v1/documents/',
+				{ids: ids}, {
 					headers: {Authorization: `Bearer ${accessToken}`, expire: expire, "Content-Type": "application/json",}
 				}
 			).then(response => {
-				setDocs(response.data)
+				setData([...data, ...response.data])
+				setIsLoading(false)
 			}).catch(err => {
 				console.log('POST objectsearch is ERROR: ', err)
 			})
 		}
-	}, [objects])
-	
-	useEffect(() => {
-		axios.post('https://gateway.scan-interfax.ru/api/v1/objectsearch',
-			inputData, {
-				headers: {Authorization: `Bearer ${accessToken}`, expire: expire, "Content-Type": "application/json",}
-			}
-		).then(response => {
-			setObjects(response.data.items)
-		}).catch(err => {
-			console.log('POST objectsearch is ERROR: ', err)
-		})
-	}, [inputData]);
+		setIsLoading(false)
+	}, [objects, currentEnd])
 	
 	
 	return (
 		<div className={styles.container}>
 			<h1 className={styles.title}>Список документов</h1>
 			<div className={styles.documentsBox}>
-				{docs
+				{isLoading
 					?
-					docs.map(item => <PublicationCards key={item.ok.id} item={item}/>)
+					<Loading imgSize={50} style={{alignSelf: "center"}} textAdd="Загружаем данные"/>
 					:
-					<h1 className={styles.noDocuments}>Документы не найдены</h1>
+					<>
+						{
+							(data)
+								?
+								<>{
+									data.map((item, id) => <PublicationCards key={item.ok.id + id} item={item}/>)
+								}</>
+								:
+								<h1>Ошибка получения документов</h1>}
+					</>
 				}
 			</div>
 			{
-				docs
+				showMore
 					?
-					<MyButtonBlue style={{width: 305, marginTop: 38, alignSelf: "center"}}>Показать больше</MyButtonBlue>
+					<MyButtonBlue
+						style={{width: 305, marginTop: 38, alignSelf: "center"}}
+						onClick={() => {
+							if (currentEnd + 10 >= objects.length) {
+								setCurrentStart(currentEnd)
+								setCurrentEnd(objects.length)
+								setShowMore(false)
+							} else {
+								setCurrentStart(currentEnd)
+								setCurrentEnd(currentEnd + 10)
+							}
+						}}
+					>Показать больше</MyButtonBlue>
 					:
 					<></>
 			}

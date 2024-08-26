@@ -15,7 +15,7 @@ function SearchForm() {
         innError: false,
         innErrorText: '',
         tonality: "any",
-        limit: 12,
+        limit: 52,
         limitError: false,
         limitErrorText: '',
         startDate: "2010-08-01",

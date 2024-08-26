@@ -3,7 +3,7 @@ import {Navigate, useLocation} from "react-router-dom";
 import styles from "../ResultPage/ResultPage.module.scss";
 import TitleSearch from "../../components/Result/TitleSearch/TitleSearch";
 import Histogram from "../../components/Result/Histogram/Histogram";
-import Documents from "../../components/Result/Documents/Documents";
+import ObjectSearchResult from "../../components/Result/ObjectSearchResult/ObjectSearchResult";
 
 function ResultPage() {
 	const location = useLocation();
@@ -76,7 +76,7 @@ function ResultPage() {
 		<div className={styles.container}>
 			<TitleSearch/>
 			<Histogram inputData={inputData}/>
-			<Documents inputData={inputData}/>
+			<ObjectSearchResult inputData={inputData}/>
 		</div>
 	
 	);
