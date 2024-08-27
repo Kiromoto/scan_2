@@ -1,3 +1,5 @@
+@import '../../../index';
+
 .logoContainer {
   margin: 0 0 0 60px;
 
@@ -5,5 +7,16 @@
     width: 141px;
     height: 141px;
   }
+}
 
+
+@media screen and (max-width: $mobile-width) {
+  .logoContainer {
+    margin: 0 0 0 14px;
+    
+    .logoImage {
+      width: 111px;
+      height: 111px;
+    }
+  }
 }

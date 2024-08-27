@@ -23,3 +23,10 @@
   }
 
 }
+
+
+@media screen and (max-width: $mobile-width) {
+  .container {
+    display: none;
+  }
+}

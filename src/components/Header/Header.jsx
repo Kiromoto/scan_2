@@ -5,15 +5,18 @@ import LogoComp from "./LogoComp/LogoComp";
 import Navbar from "./Navbar/Navbar";
 import Authorized from "./Authorized/Authorized";
 import NotAuthorized from "./NotAuthorized/NotAuthorized";
+import useDeviceDetect from "../../hooks/useDeviceDetect";
 
 
 export default function Header() {
-    const { isLoggedIn } = useAuth()
-    return (
-        <div className={styles.headerContainer}>
-            <LogoComp/>
-            <Navbar/>
-            {isLoggedIn ? <Authorized/> : <NotAuthorized/>}
-        </div>
-    );
+	const {isLoggedIn} = useAuth()
+	const {isMobile} = useDeviceDetect();
+ 
+	return (
+		<div className={styles.headerContainer}>
+			<LogoComp/>
+      {!isMobile ? <Navbar/> : <></>}
+			{isLoggedIn ? <Authorized/> : <NotAuthorized/>}
+		</div>
+	);
 }

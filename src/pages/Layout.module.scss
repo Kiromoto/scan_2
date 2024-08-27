@@ -1,15 +1,24 @@
 @import "../index";
 
 .appСontainer {
-  display: flex;
-  flex-direction: column;
-  border: black solid 1px;
+	display: flex;
+	flex-direction: column;
+	border: black solid 1px;
+	box-sizing: border-box;
+	
+	.mainСontainer {
+		display: flex;
+		flex-direction: column;
+		box-sizing: border-box;
+	}
+}
 
-
-  .mainСontainer {
-    display: flex;
-    flex-direction: column;
-  }
-
-
+@media screen and (max-width: $mobile-width) {
+	.appСontainer {
+		height: 100%;
+		
+		.mainСontainer {
+			height: 100vh;
+		}
+	}
 }

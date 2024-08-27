@@ -1,4 +1,4 @@
-export function getClearText(data) {
+export function doClearText(data) {
 	let text = ''
 	if (data) {
 		text = data.replace(/<[^>]*>/g, '')

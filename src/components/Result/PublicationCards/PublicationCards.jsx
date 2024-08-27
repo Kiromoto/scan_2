@@ -4,7 +4,7 @@ import MyAttributesLable from "../../UI/MyAttributesLable/MyAttributesLable";
 import MyButtonLtBlue from "../../UI/MyButtonLtBlue/MyButtonLtBlue";
 import {getHrefImg} from "../../../utils/services/getHrefImg";
 import noImg from "../../../assets/images/Main/result/businessnews.jpg";
-import {getClearText} from "../../../utils/services/getClearText";
+import {doClearText} from "../../../utils/services/doClearText";
 
 const readMoreBtnStyle = {
 	height: '47px',
@@ -21,15 +21,15 @@ const readMoreBtnStyle = {
 
 function PublicationCards({item, ...props}) {
 	const sourceImg = getHrefImg(item.ok.content.markup) || noImg;
-	const textClear = getClearText(item.ok.content.markup)
+	const textClear = doClearText(item.ok.content.markup)
 	
 	return (
 		<div className={styles.container}>
 			<div className={styles.dataSourceBox}>
 				<span className={styles.data}>{new Date(item.ok.issueDate).toLocaleDateString()}</span>
-				<a className={styles.source} href="#">{item.ok.source.name}</a>
+				<a className={styles.source} href="/">{item.ok.source.name}</a>
 			</div>
-		  <a href={item.ok.url} target="_blank" className={styles.title}><span className={styles.title}>{(item.ok.title.text).slice(0, 78) + '...'}</span></a>
+		  <a href={item.ok.url} target="_blank" rel="noreferrer" className={styles.title}><span className={styles.title}>{(item.ok.title.text).slice(0, 78) + '...'}</span></a>
 			<MyAttributesLable attribut={item.ok.attributes}/>
 			<div className={styles.pictureBox}>
 				<img

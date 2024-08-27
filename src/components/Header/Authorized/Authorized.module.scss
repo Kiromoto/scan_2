@@ -1,6 +1,16 @@
+@import '../../../index';
+
 .container {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+}
+
+
+@media screen and (max-width: $mobile-width) {
+  .container {
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
 }

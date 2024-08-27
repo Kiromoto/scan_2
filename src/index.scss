@@ -1,15 +1,15 @@
 @import-normalize;
 
 @font-face {
-  font-family: "Inter", sans-serif;
-  src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
-
-  font-family: 'Ferry';
-  src: url("assets/fonts/Ferry-Black.eot");
-  src: local('Ferry Black'), local('Ferry-Black'),
-  url('assets/fonts/Ferry-Black.eot?#iefix') format('embedded-opentype'),
-  url('assets/fonts/Ferry-Black.woff') format('woff'),
-  url('assets/fonts/Ferry-Black.ttf') format('truetype');
+	font-family: "Inter", sans-serif;
+	src: local("Inter"), url("assets/fonts/Inter-Medium.ttf") format("ttf");
+	
+	font-family: 'Ferry';
+	src: url("assets/fonts/Ferry-Black.eot");
+	src: local('Ferry Black'), local('Ferry-Black'),
+	url('assets/fonts/Ferry-Black.eot?#iefix') format('embedded-opentype'),
+	url('assets/fonts/Ferry-Black.woff') format('woff'),
+	url('assets/fonts/Ferry-Black.ttf') format('truetype');
 }
 
 
@@ -22,25 +22,36 @@ $color-blue: rgba(89, 112, 255, 1);
 $color-error: #FF5959;
 
 :export {
-  colorGreen: $color-green;
-  colorBlack: $color-black;
-  colorWhite: $color-white;
-  colorOrange: $color-orange;
-  colorTurquoise: $color-turquoise;
-  colorBlue: $color-blue;
-  colorError: $color-error;
+	colorGreen: $color-green;
+	colorBlack: $color-black;
+	colorWhite: $color-white;
+	colorOrange: $color-orange;
+	colorTurquoise: $color-turquoise;
+	colorBlue: $color-blue;
+	colorError: $color-error;
 }
 
 $full-width: 1440px;
-
-//$min-height-main-container: calc(100vh - 120px - 122px);
-
+$mobile-width: 769px;
 
 body {
-  margin: 0 0 0 calc((100vw - 1440px) / 2);
-  padding: 0;
-  width: $full-width;
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
+	margin: 0 0 0 calc((100vw - $full-width) / 2);
+	padding: 0;
+	width: $full-width;
+}
 
+
+@media screen and (max-device-width: $mobile-width) {
+	body {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		padding: 0;
+		margin: 0;
+    width: auto;
+		height: auto;
+    box-sizing: border-box;
+	}
 }

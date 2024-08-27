@@ -5,3 +5,10 @@
   margin: 70px 82px 0 51px;
   height: 576px;
 }
+
+
+@media screen and (max-width: $mobile-width) {
+  .container {
+    display: none;
+  }
+}

@@ -4,9 +4,7 @@
   display: flex;
   justify-content: space-between;
   margin: 24px 60px 0 60px;
-  z-index: 1;
   height: 620px;
-
 
   .leftBlock {
     width: 743px;
@@ -42,5 +40,46 @@
   .rightBlock {
     z-index: 2;
   }
+}
 
+@media screen and (max-width: $mobile-width) {
+  .container {
+    flex-direction: column;
+    
+    margin: 20px 0 0 0;
+    height: 136px;
+    width: 100%;
+    
+    .leftBlock {
+      margin: 0 0 0 14px;
+      
+      .descriptionTitle {
+        font-size: 28px;
+        z-index: auto;
+
+      }
+      
+      .descriptionParagraph {
+        font-size: 18px;
+        margin: 19px 34px 0 0;
+        width: 327px;
+        word-break: break-word;
+        
+        br {
+          display: none;
+        }
+      }
+    }
+    
+    .rightBlock {
+      margin: 24px 0 0 0;
+      z-index: auto;
+      
+      img {
+        width: 100%;
+        margin: 24px 0 0 0;
+      }
+    }
+    
+  }
 }

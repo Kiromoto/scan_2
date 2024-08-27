@@ -1,35 +1,52 @@
 @import './../../index.scss';
 
 .container {
-  height: 137px;
-  flex-shrink: 0;
-  color: $color-white;
-  background: $color-green;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	height: 137px;
+	flex-shrink: 0;
+	color: $color-white;
+	background: $color-green;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+	.logo {
+		width: 141px;
+		height: 141px;
+		margin: 2px 0 2px 60px;
+	}
+	
+	.info {
+		width: 199px;
+		color: $color-white;
+		margin: 25px 45px 0 0;
+		
+		text-align: right;
+		font-family: Inter;
+		font-size: 14px;
+		font-weight: 400;
+		letter-spacing: 0.14px;
+		
+		.copyright {
+			margin: 21px 0 0 0;
+			font-size: 12px;
+		}
+	}
+	
+}
 
-  .logo {
-    width: 141px;
-    height: 141px;
-    margin: 2px 0 2px 60px;
-  }
 
-  .info {
-    width: 199px;
-    color: $color-white;
-    margin: 25px 45px 0 0;
-
-    text-align: right;
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.14px;
-
-    .copyright {
-      margin: 21px 0 0 0;
-      font-size: 12px;
-    }
-  }
-
+@media screen and (max-width: $mobile-width) {
+	.container {
+		width: auto;
+		
+		.logo {
+			width: 111px;
+			height: 111px;
+			margin: -12px 0 2px 18px;
+		}
+		
+		.info {
+			margin: 25px 19px 0 0;
+		}
+	}
 }
