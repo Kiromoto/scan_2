@@ -9,6 +9,13 @@
 
 @media screen and (max-width: $mobile-width) {
   .container {
-    display: none;
+    margin: 70px 0 0 14px;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    
+    img {
+      height: 392px;
+    }
   }
 }

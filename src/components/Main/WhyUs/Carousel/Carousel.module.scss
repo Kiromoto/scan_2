@@ -1,53 +1,73 @@
 @import "../../../../index";
 
 .carousel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 70px 10px 0 10px;
-  flex-shrink: 0;
-  
-  .cardContainer {
-    border: white solid 1px;
-    padding: 0;
-    margin: 10px 0 10px 15px;
-    width: 400px;
-    height: 225px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-    
-    
-    .cardImage {
-      margin: 30px 0 0 20px;
-      height: 64px;
-    }
-    
-    .cardText {
-      margin: 30px 0 0 20px;
-      
-      color: $color-black;
-      font-family: Inter;
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-      letter-spacing: 0.18px;
-    }
-    
-    
-  }
-  
-  .slick-next:before {
-    content: url('../../../../assets/images/Main/carousel/right-chevron.svg');
-  }
-  
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 70px 10px 0 10px;
+	flex-shrink: 0;
+	
+	.cardContainer {
+		border: white solid 1px;
+		padding: 0;
+		margin: 10px 0 10px 15px;
+		width: 400px;
+		height: 225px;
+		border-radius: 10px;
+		box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+		
+		
+		.cardImage {
+			margin: 30px 0 0 20px;
+			height: 64px;
+		}
+		
+		.cardText {
+			margin: 30px 0 0 20px;
+			
+			color: $color-black;
+			font-family: Inter;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			letter-spacing: 0.18px;
+		}
+	}
+	
+	.slick-next:before {
+		content: url('../../../../assets/images/Main/carousel/right-chevron.svg');
+	}
+	
 }
 
 
 @media screen and (max-width: $mobile-width) {
-  .carousel {
-    display: none;
-  }
+	.carousel {
+		height: auto;
+		width: auto;
+    margin: 32px 20px 0 30px;
+		
+		.cardContainer {
+			border: white solid 1px;
+			padding: 0;
+			margin: 10px 0 10px 15px;
+			width: 298px;
+			height: 188px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+      
+      .cardImage {
+        margin: 20px 0 0 17px;
+      }
+      
+      .cardText {
+        margin: 19px 0 0 17px;
+      }
+      
+		}
+		
+	}
 }
 
 

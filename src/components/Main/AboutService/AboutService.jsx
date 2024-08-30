@@ -22,7 +22,7 @@ function AboutService() {
 				<div className={styles.descriptionTitle}>СЕРВИС ПО ПОИСКУ <br/>
 					ПУБЛИКАЦИЙ <br/> О КОМПАНИИ <br/> ПО ЕГО ИНН
 				</div>
-				<div className={styles.descriptionParagraph}>Комплексный анализ публикаций, получение данных <br/> в формате PDF
+				<div className={styles.descriptionParagraph}>Комплексный анализ публикаций, <br className={styles.brMobile}/> получение данных <br/> в формате PDF
 					на электронную почту.
 				</div>
 				{

@@ -19,15 +19,31 @@
     font-weight: 900;
     line-height: normal;
     letter-spacing: 0.45px;
+    
+    .brMobile {
+      display: none;
+    }
   }
 }
 
 
 @media screen and (max-width: $mobile-width) {
   .container {
-    display: none;
-    margin: 20px 0 0 14px;
-    height: 136px;
-    width: 100%;
+    margin: 55px 0 0 0;
+    height: auto;
+    width: auto;
+    
+    .title {
+      margin: 0 0 0 14px;
+      height: auto;
+      width: auto;
+      font-size: 28px;
+      letter-spacing: 0.01em;
+      text-align: left;
+      
+      .brMobile {
+        display: flex;
+      }
+    }
   }
 }

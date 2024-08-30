@@ -1,3 +1,6 @@
+@import '../../index';
+
+
 .container {
   display: flex;
   flex-direction: column;
@@ -8,4 +11,18 @@
     margin: 47px 0 64px 53px;
   }
 
+}
+
+
+
+@media screen and (max-width: $mobile-width) {
+  .container {
+    height: auto;
+    width: auto;
+    
+    .formBox {
+      height: auto;
+      width: auto;
+    }
+  }
 }

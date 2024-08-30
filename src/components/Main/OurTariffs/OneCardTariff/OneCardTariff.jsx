@@ -5,7 +5,6 @@ import {useAuth} from "../../../../hooks/useAuth";
 import tick from '../../../../assets/images/Main/tariffs/tick.svg'
 
 
-
 function OneCardTariff({item}, ...props) {
     const { isLoggedIn, userTariff, setUserTariff } = useAuth()
     const activeTariff = (userTariff === item.id) && isLoggedIn
@@ -52,6 +51,7 @@ function OneCardTariff({item}, ...props) {
                                 marginTop: 55,
                                 marginLeft: 30,
                                 marginBottom: 24,
+                                width: "85%"
                                 }}
                         >Перейти в личный кабинет</MyButtonBlue>
                         :
@@ -60,6 +60,7 @@ function OneCardTariff({item}, ...props) {
                                 marginTop: 55,
                                 marginLeft: 30,
                                 marginBottom: 24,
+                                width: "85%",
                             }}
                             onClick={() => {setUserTariff(item.id)}}
                         >Подробнее</MyButtonBlue>

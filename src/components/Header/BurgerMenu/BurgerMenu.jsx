@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {slide as Menu} from 'react-burger-menu'
-import {useNavigate} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 // import menuUI from '../../../assets/images/Header/menu.svg'
 import crossUI from '../../../assets/images/Header/cross.svg'
 import styles from './BurgerMenu.module.scss'
+import MyButtonBlue from "../../UI/MyButtonBlue/MyButtonBlue";
 
 function BurgerMenu() {
 	const navigate = useNavigate()
@@ -20,13 +21,26 @@ function BurgerMenu() {
 				<Menu right
 				      isOpen={isOpen}
 				      onClick={() => setIsOpen(!isOpen)}
-				      // customBurgerIcon={<img className='.bm-burger-button' src={menuUI}/>}
 				      customCrossIcon={<img alt="cross" className='.bm-cross-button' src={crossUI}/>}
 				>
-					<a id="home" className="menu-item" href="/">Home</a>
-					<a id="about" className="menu-item" href="/search">About</a>
-					<a id="contact" className="menu-item" href="/result">Contact</a>
-					<a onClick={(e) => goToLoginPage} className="menu-item--small">Войти</a>
+					<NavLink id="main" className="menu-item" to="/">Главная</NavLink>
+					<NavLink id="search" className="menu-item" to="/search">Поиск</NavLink>
+					<NavLink id="result" className="menu-item" to="/result">Результат</NavLink>
+					<NavLink id="signup" className="menu-item" to="/login">Зарегистрироваться</NavLink>
+					<NavLink onClick={(e) => goToLoginPage} className="menu-item--small">
+						<MyButtonBlue
+						style={{marginTop: 55,
+							marginLeft: 30,
+							marginBottom: 24,
+							width: "85%",
+							color: "black",
+							background: "rgba(124, 227, 225, 1)",
+						}}
+						>Войти</MyButtonBlue>
+						
+						
+					
+					</NavLink>
 				</Menu>
 				
 			</div>
