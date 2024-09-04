@@ -12,13 +12,13 @@ function MyDateInput({error, errorMsg, ...props}) {
             <input
                 className={rootClasses.join(' ')}
                 {...props}/>
-            {
-                error
-                    ?
-                    <div className={styles.errorArea}>{errorMsg}</div>
-                    :
-                    <div className={styles.errorArea}></div>
-            }
+            {/*{*/}
+            {/*    error*/}
+            {/*        ?*/}
+            {/*        <div className={styles.errorArea}>{errorMsg}</div>*/}
+            {/*        :*/}
+            {/*        <div className={styles.errorArea}></div>*/}
+            {/*}*/}
         </>
 
     );

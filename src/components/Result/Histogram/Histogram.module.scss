@@ -1,106 +1,115 @@
 @import "../../../index";
 
 .container {
-  display: flex;
-  flex-direction: column;
-  width: 1346px;
-  height: 260px;
-  margin: 0 43px 0 51px;
-
-
-  .title {
-    margin: 0 0 0 9px;
-
-    color: #000;
-    font-family: Ferry;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-    letter-spacing: 0.6px;
-  }
-
-  .titleCount {
-    color: #949494;
-    font-family: Inter;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.36px;
-
-    margin: 17px 0 0 9px;
-  }
-
-  .histogramBox {
-    display: flex;
-    flex-direction: row;
-    height: 158px;
-    width: 1260px;
-    margin: 27px 0 0 0;
-
-    .greenTitleSections {
-      margin: 0 0 0 34px;
-      width: 133px;
-      height: 158px;
-      flex-shrink: 0;
-      border-radius: 10px 0px 0px 10px;
-      border: 2px solid $color-green;
-      background: $color-green;
-      color: $color-white;
-      font-family: Inter;
-      font-size: 20px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: normal;
-      letter-spacing: 0.4px;
-
-      section:nth-child(1) {
-        margin: 17px 0 0 28px;
-      }
-
-      section {
-        margin: 26px 0 0 28px;
-      }
-    }
-
-    .sliderResultContent {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 158px;
-      width: calc(1260px - 133px);
-      border-radius: 0 10px 10px 0;
-      border: 2px solid $color-green;
-
-      .onePeriod {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: 100%;
-        width: 130px;
-        width: 100%;
-        border-right: 2px solid rgba(148, 148, 148, 0.4);
-        padding: 5px 0;
-        margin: 10px 0;
-
-        color: #000;
-        font-family: Inter;
-        font-size: 18px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        letter-spacing: 0.54px;
-
-
-        .periodItemUl:nth-child(1) {
-          margin: 3px 0 0 0;
-        }
-
-        .periodItemUl {
-          margin: 28px 0 0 0px;
-        }
-      }
-    }
-  }
+	display: flex;
+	flex-direction: column;
+	width: 1346px;
+	height: 260px;
+	margin: 0 43px 0 51px;
+	
+	
+	.title {
+		margin: 0 0 0 9px;
+		
+		color: #000;
+		font-family: Ferry;
+		font-size: 30px;
+		font-style: normal;
+		font-weight: 900;
+		line-height: normal;
+		letter-spacing: 0.6px;
+	}
+	
+	.titleCount {
+		color: #949494;
+		font-family: Inter;
+		font-size: 18px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		letter-spacing: 0.36px;
+		
+		margin: 17px 0 0 9px;
+	}
+	
+	.histogramBox {
+		display: flex;
+		flex-direction: row;
+		height: 158px;
+		width: 1260px;
+		margin: 27px 0 0 0;
+		
+		.greenTitleSections {
+			margin: 0 0 0 34px;
+			width: 133px;
+			height: 158px;
+			flex-shrink: 0;
+			border-radius: 10px 0px 0px 10px;
+			border: 2px solid $color-green;
+			background: $color-green;
+			color: $color-white;
+			font-family: Inter;
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: normal;
+			letter-spacing: 0.4px;
+			
+			section:nth-child(1) {
+				margin: 17px 0 0 28px;
+			}
+			
+			section {
+				margin: 26px 0 0 28px;
+			}
+		}
+		
+		.sliderResultContent {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 158px;
+			width: calc(1260px - 133px);
+			border-radius: 0 10px 10px 0;
+			border: 2px solid $color-green;
+			
+			.onePeriod {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				height: 100%;
+				width: 130px;
+				width: 100%;
+				border-right: 2px solid rgba(148, 148, 148, 0.4);
+				padding: 5px 0;
+				margin: 10px 0;
+				
+				color: #000;
+				font-family: Inter;
+				font-size: 18px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: normal;
+				letter-spacing: 0.54px;
+				
+				
+				.periodItemUl:nth-child(1) {
+					margin: 3px 0 0 0;
+				}
+				
+				.periodItemUl {
+					margin: 28px 0 0 0px;
+				}
+			}
+		}
+	}
 }
+
+@media screen and (max-width: $mobile-width) {
+	.container {
+    width: auto;
+    height: auto;
+    margin: 60px 0 0 0;
+	}
+}
+

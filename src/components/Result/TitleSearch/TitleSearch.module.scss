@@ -37,3 +37,39 @@
   }
 
 }
+
+
+
+@media screen and (max-width: $mobile-width) {
+  .container {
+    height: auto;
+    width: auto;
+    flex-direction: column;
+    margin: 20px 0 0 14px;
+    
+    .text {
+      margin: 0;
+      width: auto;
+      
+      .textFindSoon {
+        font-size: 28px;
+        line-height: 33px;
+        letter-spacing: 1%;
+      }
+      
+      .textNeedTime {
+        width: auto;
+        margin: 21px 0 0 0;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 22px;
+      }
+    }
+    
+    .img {
+      margin: 21px 0 0 0;
+      width: calc(100% - 14px);
+    }
+    
+  }
+}

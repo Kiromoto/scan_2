@@ -1,47 +1,55 @@
 @import "../../../index";
 
 .myInput {
-  height: 43px;
-  width: 176px;
-  border-radius: 5px;
-  border: 1px solid rgba(199, 199, 199, 1);
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
-  margin: 15px 0 0 0;
-  padding: 0px 10px;
-
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 19.36px;
-  letter-spacing: 0.01em;
-  text-align: center;
-  color: $color-black;
-
-  &.error {
-    color: $color-error;
-    border: 1px solid $color-error;
-    box-shadow: 0px 0px 20px 0px rgba(255, 89, 89, 0.2);
-  }
-
+	height: 43px;
+	width: 176px;
+	border-radius: 5px;
+	border: 1px solid rgba(199, 199, 199, 1);
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05);
+	margin: 15px 0 0 0;
+	padding: 0px 10px;
+	
+	font-family: Inter;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 19.36px;
+	letter-spacing: 0.01em;
+	text-align: center;
+	color: $color-black;
+	
+	&.error {
+		color: $color-error;
+		border: 1px solid $color-error;
+		box-shadow: 0px 0px 20px 0px rgba(255, 89, 89, 0.2);
+	}
+	
 }
 
 .errorArea {
-  display: flex;
-  height: 18px;
-  margin: 6px 0 6px 0;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	height: 18px;
+	margin: 6px 0 6px 0;
+	align-items: center;
+	justify-content: center;
+	
+	color: $color-error;
+	font-family: Inter;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16.94px;
+	letter-spacing: 0.01em;
+	text-align: left;
+	
+	&:nth-last-child {
+		display: none;
+	}
+	
+}
 
-  color: $color-error;
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16.94px;
-  letter-spacing: 0.01em;
-  text-align: left;
-
-  &:nth-last-child {
-    display: none;
-  }
-
+@media screen and (max-width: $mobile-width) {
+	.myInput {
+		.errorArea {
+			display: none;
+		}
+	}
 }

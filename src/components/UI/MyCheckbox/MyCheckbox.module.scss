@@ -55,3 +55,10 @@
       color: rgb(71, 196, 33);
   }
 }
+
+
+@media screen and (max-width: $mobile-width) {
+  .myCheckboxLabel {
+    display: none;
+  }
+}

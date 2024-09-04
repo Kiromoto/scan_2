@@ -1,52 +1,98 @@
 @import '../../../index';
 
 .container {
-  display: flex;
-  flex-direction: row;
-  height: 214px;
-  width: 1298px;
-  margin: 24px 0 0 60px;
+	display: flex;
+	flex-direction: row;
+	height: 214px;
+	width: 1298px;
+	margin: 24px 0 0 60px;
+	
+	.textBox {
+		display: flex;
+		flex-direction: column;
+		width: 817px;
+		
+		.title {
+			margin: 45px 0 0 0;
+			font-family: Ferry;
+			font-size: 40px;
+			font-weight: 900;
+			letter-spacing: 1.2px;
+			
+		}
+		
+		.textInfo {
+			width: 534px;
+			margin: 25px 0 0 0;
+			font-family: Inter;
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 24.2px;
+			letter-spacing: 0.02em;
+			text-align: left;
+		}
+		
+	}
+	
+	.imgBox {
+		.documentImg {
+			margin: 108px 0 0 61px;
+			width: 91px;
+			height: 111px;
+		}
+		
+		.foldersImg {
+			margin: 126px 0 0 166px;
+			width: 141px;
+			height: 69px;
+		}
+	}
+}
 
-  .textBox {
-    display: flex;
-    flex-direction: column;
-    width: 817px;
 
-    .title {
-      margin: 45px 0 0 0;
-      font-family: Ferry;
-      font-size: 40px;
-      font-weight: 900;
-      letter-spacing: 1.2px;
-
-    }
-
-    .textInfo {
-      width: 534px;
-      margin: 25px 0 0 0;
-      font-family: Inter;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 24.2px;
-      letter-spacing: 0.02em;
-      text-align: left;
-    }
-
-  }
-
-  .imgBox {
-    .documentImg {
-      margin: 108px 0 0 61px;
-      width: 91px;
-      height: 111px;
-    }
-
-    .foldersImg {
-      margin: 126px 0 0 166px;
-      width: 141px;
-      height: 69px;
-    }
-
-  }
-
+@media screen and (max-width: $mobile-width) {
+	.container {
+		flex-direction: column;
+		height: auto;
+		width: auto;
+		margin: 20px 0 0 14px;
+		
+		.textBox {
+			display: flex;
+			flex-direction: column;
+			width: auto;
+			
+			.title {
+				font-size: 28px;
+				font-weight: 900;
+				line-height: 33.6px;
+				letter-spacing: 0.01em;
+			}
+			
+			.textInfo {
+				max-width: 250px;
+				margin: 19px 0 0 0;
+				font-size: 18px;
+				font-weight: 400;
+				line-height: 21.78px;
+				text-align: left;
+			}
+			
+		}
+		
+		.imgBox {
+			.documentImg {
+				display: block;
+				position: absolute;
+				top: 140px;
+				left: 230px;
+				width: 58px;
+				height: 72px;
+			}
+			
+			.foldersImg {
+				display: none;
+			}
+		}
+	}
 }

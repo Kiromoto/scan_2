@@ -73,7 +73,6 @@
       line-height: 16.94px;
       letter-spacing: 0.01em;
       text-align: left;
-
     }
 
   }
@@ -95,9 +94,48 @@
       color: rgba(148, 148, 148, 1);
       margin: 10px 0 0 42px;
     }
+  }
+}
+
+
+
+@media screen and (max-width: $mobile-width) {
+  .container {
+    height: auto;
+    width: auto;
+    flex-direction: column;
+    
+    .leftSide {
+      width: auto;
+      height: auto;
+      margin: 21px 0 0 14px;
+      
+      .mySelect {
+        width: calc(100% - 14px);
+        
+        .myOption {
+          width: calc(100% - 14px);
+        }
+      }
+      
+      .dateBox {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        margin: 0 14px 0 0;
+      }
+      
+    }
+    
+    
+    .rightSide {
+      margin: 0;
+      
+      .requiredFieldsMsg {
+        margin: 10px 0 37px 42px;
+      }
+      
+    }
 
   }
-
-
-
 }

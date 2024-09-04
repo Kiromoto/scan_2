@@ -6,10 +6,14 @@ import MyButtonBlue from "../../UI/MyButtonBlue/MyButtonBlue";
 import MyDateInput from "../../UI/MyDateInput/MyDateInput";
 import {useNavigate} from "react-router-dom";
 import {validateDateRange, validateInn, validateLimit} from "../../../utils/services/validation";
+import useDeviceDetect from "../../../hooks/useDeviceDetect";
 
 
 function SearchForm() {
     const navigate = useNavigate();
+    const {isMobile} = useDeviceDetect();
+    const mobileWidth = isMobile ? "90%" : "220px";
+    const mobileWidthDate = isMobile ? "auto" : "176px";
     const [searchParams, setSearchParams] = useState({
         inn: "7710137066",
         innError: false,
@@ -146,7 +150,7 @@ function SearchForm() {
                     error={searchParams.innError}
                     errorMsg={searchParams.innErrorText}
                     placeholder="10 цифр"
-                    style={{fontSize: 14, textAlign: "center", width: 220,}}
+                    style={{fontSize: 14, textAlign: "center", width: mobileWidth,}}
                     onChange={e => (setSearchParams({...searchParams, inn: e.target.value}))}
                     onBlur={e => checkValidInn(e.target.value)}
                 />
@@ -159,9 +163,9 @@ function SearchForm() {
                     onChange={(e) => {
                         setSearchParams({...searchParams, tonality: e.target.value})
                     }}>
-                    <option value="any">Любая</option>
-                    <option value="positive">Позитивная</option>
-                    <option value="negative">Негативная</option>
+                    <option className={styles.myOption} value="any">Любая</option>
+                    <option className={styles.myOption} value="positive">Позитивная</option>
+                    <option className={styles.myOption} value="negative">Негативная</option>
                 </select>
 
                 <p className={styles.inputTitle}>Количество документов к выдаче *</p>
@@ -177,7 +181,7 @@ function SearchForm() {
                     error={searchParams.limitError}
                     errorMsg={searchParams.limitErrorText}
                     placeholder="от 1 до 1000"
-                    style={{fontSize: 14, textAlign: "center", width: 220}}
+                    style={{fontSize: 14, textAlign: "center", width: mobileWidth}}
                     onChange={e => {
                         setSearchParams({...searchParams, limit: e.target.value})
                     }}
@@ -191,6 +195,7 @@ function SearchForm() {
                         value={searchParams.startDate}
                         placeholder="Дата начала"
                         error={searchParams.startDateError}
+                        style={{width: mobileWidthDate}}
                         onChange={(e) => {
                             setSearchParams({...searchParams, startDate: e.target.value})
                         }}
@@ -201,7 +206,7 @@ function SearchForm() {
                         name="endDate"
                         type="date"
                         value={searchParams.endDate}
-                        style={{marginLeft: 20}}
+                        style={{marginLeft: isMobile ? 0 : 20, width: mobileWidthDate}}
                         error={searchParams.endDateError}
                         placeholder="Дата конца"
                         onChange={(e) => {
@@ -214,7 +219,6 @@ function SearchForm() {
                     <span className={styles.errorDateSpan}>{searchParams.dateErrorText}</span> :
                     <span className={styles.errorDateSpan}></span>
                 }
-                <span className={styles.errorDateSpan}></span>
 
             </div>
             <div className={styles.rightSide}>
@@ -283,7 +287,7 @@ function SearchForm() {
                 </MyCheckbox>
 
                 <MyButtonBlue
-                    style={{marginTop: 117, marginLeft: 41, width: 305, opacity: searchParams.opacityLoginBtn}}
+                    style={{marginTop: isMobile ? 0 : 117, marginLeft: isMobile ? 14 : 41,  width: isMobile ? "calc(100% - 29px)" : 305, opacity: searchParams.opacityLoginBtn}}
                     disabled={!(searchParams.isValidData)}
                     onClick={(e) => {
                         doSearch(e)
