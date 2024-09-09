@@ -9,13 +9,11 @@ import {ReactComponent as LeftChevron} from '../../../../assets/images/Main/caro
 import {WhyUsCarousel} from "../../../../utils/constants/whyUsCarousel";
 import useDeviceDetect from "../../../../hooks/useDeviceDetect";
 
-// eslint-disable-next-line react-hooks/rules-of-hooks
-
 
 function RightArrow(props) {
     const {className, style, onClick} = props;
     const {isMobile} = useDeviceDetect();
-    const mR = isMobile ? "5px" : "-20px";
+    const mR = isMobile ? "10px" : "-20px";
     return (
         <RightChevron
             className={className}

@@ -109,7 +109,19 @@
 	.container {
     width: auto;
     height: auto;
-    margin: 60px 0 0 0;
+    margin: 60px 0 0 14px;
+		
+		.title {
+			font-size: 28px;
+			margin: 0 0 0 0;
+		}
+		
+		.titleCount {
+			margin: 10px 0 0 0;
+		}
+		
+		
+		
 	}
 }
 

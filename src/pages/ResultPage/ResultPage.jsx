@@ -4,10 +4,13 @@ import styles from "../ResultPage/ResultPage.module.scss";
 import TitleSearch from "../../components/Result/TitleSearch/TitleSearch";
 import Histogram from "../../components/Result/Histogram/Histogram";
 import ObjectSearchResult from "../../components/Result/ObjectSearchResult/ObjectSearchResult";
+import useDeviceDetect from "../../hooks/useDeviceDetect";
+import MobileHistogram from "../../components/Result/MobileHistogram/MobileHistogram";
 
 function ResultPage() {
 	const location = useLocation();
 	const searchParams = location?.state?.searchParams || '';
+	const {isMobile} = useDeviceDetect()
 	const inputData = {
 		"issueDateInterval": {
 			"startDate": new Date(searchParams.startDate).toJSON(),
@@ -75,7 +78,7 @@ function ResultPage() {
 	return (
 		<div className={styles.container}>
 			<TitleSearch/>
-			<Histogram inputData={inputData}/>
+			{isMobile ? <MobileHistogram inputData={inputData}/> : <Histogram inputData={inputData}/>}
 			<ObjectSearchResult inputData={inputData}/>
 		</div>
 	
