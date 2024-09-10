@@ -13,7 +13,7 @@ import useDeviceDetect from "../../../../hooks/useDeviceDetect";
 function RightArrow(props) {
     const {className, style, onClick} = props;
     const {isMobile} = useDeviceDetect();
-    const mR = isMobile ? "10px" : "-20px";
+    const mR = isMobile ? "2px" : "-20px";
     return (
         <RightChevron
             className={className}
@@ -26,7 +26,7 @@ function RightArrow(props) {
 function LeftArrow(props) {
     const {className, style, onClick} = props;
     const {isMobile} = useDeviceDetect();
-    const mL = isMobile ? "-5px" : "-20px";
+    const mL = isMobile ? "5px" : "-20px";
     return (
         <LeftChevron
             className={className}
