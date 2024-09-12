@@ -1,0 +1,83 @@
+@import '../../../../index';
+
+
+.histogramBox {
+	width: auto;
+	height: 140px;
+	display: flex;
+	flex-direction: column;
+	margin: 34px 38px 0 38px;
+	border-radius: 10px;
+	
+	.greenTitleSections {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+		width: 100%;
+		min-height: 75px;
+		background: $color-green;
+		border-radius: 10px 10px 0 0;
+		border: 2px solid $color-green;
+		color: $color-white;
+		font-family: Inter;
+		font-size: 18px;
+		font-weight: 500;
+		line-height: 21.78px;
+		letter-spacing: 0.01em;
+		text-align: left;
+		
+		section:nth-child(1) {
+			width: 44%;
+			margin: 23px 0 23px 15px;
+		}
+		
+		section {
+			width: 28%;
+			margin: 23px 0 23px 20px;
+		}
+	}
+	
+	.sliderResultContent {
+		display: flex;
+		flex-direction: row;
+		min-height: 65px;
+		width: 100%;
+		border-radius: 0 0 10px 10px;
+		border: 2px solid $color-green;
+		box-sizing: content-box;
+		
+		.onePeriod {
+			display: flex;
+			width: auto;
+			color: #000;
+			font-family: Inter;
+			font-size: 18px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: normal;
+			letter-spacing: 0.54px;
+			
+			
+			.periodItemUl:nth-child(1) {
+				display: flex;
+				align-items: center;
+				justify-content: start;
+				width: 44%;
+				height: 100%;
+				margin: 18px 0 0 10px;
+			}
+			
+			.periodItemUl {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 28%;
+				height: 100%;
+				margin: 18px 0 28px 0;
+
+			}
+		}
+	}
+	
+}

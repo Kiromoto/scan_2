@@ -5,6 +5,7 @@ import MyButtonLtBlue from "../../UI/MyButtonLtBlue/MyButtonLtBlue";
 import {getHrefImg} from "../../../utils/services/getHrefImg";
 import noImg from "../../../assets/images/Main/result/businessnews.jpg";
 import {doClearText} from "../../../utils/services/doClearText";
+import useDeviceDetect from "../../../hooks/useDeviceDetect";
 
 const readMoreBtnStyle = {
 	height: '47px',
@@ -20,8 +21,11 @@ const readMoreBtnStyle = {
 }
 
 function PublicationCards({item, ...props}) {
+	const {isMobile} = useDeviceDetect()
+	const lenghtSliceTitle = isMobile ? 1000 : 78
+	const endPointText = item.ok.title.text > lenghtSliceTitle ? '...' : ''
 	const sourceImg = getHrefImg(item.ok.content.markup) || noImg;
-	const textClear = doClearText(item.ok.content.markup)
+	const textClear = doClearText(item.ok.content.markup, isMobile)
 	
 	return (
 		<div className={styles.container}>
@@ -29,8 +33,8 @@ function PublicationCards({item, ...props}) {
 				<span className={styles.data}>{new Date(item.ok.issueDate).toLocaleDateString()}</span>
 				<a className={styles.source} href="/">{item.ok.source.name}</a>
 			</div>
-		  <a href={item.ok.url} target="_blank" rel="noreferrer" className={styles.title}><span className={styles.title}>{(item.ok.title.text).slice(0, 78) + '...'}</span></a>
-			<MyAttributesLable attribut={item.ok.attributes}/>
+		  <a href={item.ok.url} target="_blank" rel="noreferrer" className={styles.title}><span className={styles.title}>{(item.ok.title.text).slice(0, lenghtSliceTitle) + endPointText}</span></a>
+			<MyAttributesLable attribut={item.ok.attributes} isMobile={isMobile}/>
 			<div className={styles.pictureBox}>
 				<img
 					alt="publication img"
@@ -38,8 +42,6 @@ function PublicationCards({item, ...props}) {
 			</div>
 			
 			<div className={styles.textBox}>{textClear}</div>
-			{/*<div className={styles.textBox}>{item.ok.content.markup}</div>*/}
-			{/*<div className={styles.textBox} dangerouslySetInnerHTML={{__html: parse(item.ok.content.markup.slice(0, 600)+'...')}}></div>*/}
 			<div className={styles.btnAndWordCountBox}>
         <MyButtonLtBlue
           style={readMoreBtnStyle}

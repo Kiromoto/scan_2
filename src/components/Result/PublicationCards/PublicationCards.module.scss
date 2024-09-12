@@ -39,9 +39,6 @@
       line-height: 19.36px;
       letter-spacing: 0.03em;
       text-align: left;
-      
-      
-      
     }
   }
   
@@ -107,6 +104,59 @@
     }
     
   }
-  
-  
+}
+
+@media screen and (max-width: $mobile-width) {
+  .container {
+    width: auto;
+    
+    .dataSourceBox {
+      margin: 19px 0 0 24px;
+      
+      .data {
+        width: auto;
+        height: 17px;
+        font-size: 14px;
+      }
+      
+      .source {
+        height: 17px;
+        width: auto;
+        font-size: 14px;
+        overflow: hidden;
+      }
+      
+      
+    }
+    
+    .title {
+      margin: 21px 14px 0 14px;
+      height: auto;
+      width: auto;
+
+      font-size: 19px;
+      font-weight: 500;
+      line-height: 22.99px;
+      letter-spacing: 0.01em;
+      text-align: left;
+    }
+    
+    .pictureBox {
+      width: auto;
+      margin: 13px 14px 0 24px;
+      
+      img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        object-fit: cover;
+      }
+    }
+    
+    
+    .textBox {
+      width: auto;
+      height: 228px;
+  }
+}
 }

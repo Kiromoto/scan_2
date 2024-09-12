@@ -1,5 +1,7 @@
-export function doClearText(data) {
+export function doClearText(data, isMobile) {
 	let text = ''
+	const lenghtSliceText = isMobile ? 500 : 790
+
 	if (data) {
 		text = data.replace(/<[^>]*>/g, '')
 		
@@ -41,7 +43,9 @@ export function doClearText(data) {
 		}
 	}
 	
-	return text.slice(0, 790)+'...'
+	const endPointText = text.length > lenghtSliceText ? '...' : ''
+	
+	return text.slice(0, lenghtSliceText)+endPointText
 	
 	
 }

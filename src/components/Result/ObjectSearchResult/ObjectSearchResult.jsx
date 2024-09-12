@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {useAuth} from "../../../hooks/useAuth";
-import styles from "../Documents/Documents.module.scss";
+import styles from "./ObjectSearchResult.module.scss";
 import Loading from "../../UI/Loading/Loading";
 import Documents from "../Documents/Documents";
 
