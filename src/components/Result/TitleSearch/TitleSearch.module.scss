@@ -32,7 +32,7 @@
     }
   }
 
-  .img {
+  .imgBox {
     margin: 25px 0 0 215px;
   }
 
@@ -66,10 +66,13 @@
       }
     }
     
-    .img {
+    .imgBox {
       margin: 21px 0 0 0;
-      //width: calc(100% - 100px);
       width: auto;
+      
+      img {
+        width: 100%;
+      }
     }
     
   }

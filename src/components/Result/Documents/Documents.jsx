@@ -5,10 +5,12 @@ import {useAuth} from "../../../hooks/useAuth";
 import Loading from "../../UI/Loading/Loading";
 import axios from "axios";
 import PublicationCards from "../PublicationCards/PublicationCards";
+import {useDeviceType} from "../../../hooks/useDeviceType";
 
 
 function Documents({objects, ...props}) {
 	const {accessToken, expire} = useAuth()
+	const {isMobile} = useDeviceType()
 	const [data, setData] = useState([])
 	const [isLoading, setIsLoading] = useState(true)
 	const [currentStart, setCurrentStart] = useState(0)
@@ -39,7 +41,7 @@ function Documents({objects, ...props}) {
 			})
 		}
 		setIsLoading(false)
-	}, [objects, currentEnd])
+	}, [objects, currentEnd, isMobile])
 	
 	
 	return (
@@ -67,7 +69,8 @@ function Documents({objects, ...props}) {
 					?
 					<MyButtonBlue
 						style={{width: 305, marginTop: 38, alignSelf: "center"}}
-						onClick={() => {
+						onClick={(e) => {
+							e.preventDefault();
 							if (currentEnd + 10 >= objects.length) {
 								setCurrentStart(currentEnd)
 								setCurrentEnd(objects.length)

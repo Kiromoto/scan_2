@@ -54,7 +54,7 @@ function LoginForm() {
     return (
         <div className={styles.container}>
             <div className={styles.loginRegisrationBox}>
-                <div className={styles.lgContainer} style={{width: 151}}>
+                <div className={styles.lgContainer}>
                     <MyButtonLight style={{
                         fontSize: 16,
                         color: colors.colorGreen,
@@ -62,7 +62,7 @@ function LoginForm() {
                     }}>Войти</MyButtonLight>
                     <div className={styles.lineLgContainer}></div>
                 </div>
-                <div className={styles.lgContainer} style={{width: 213}}>
+                <div className={styles.lgContainer}>
                     <MyButtonLight style={{
                         fontSize: 16,
                         opacity: 1,
@@ -102,7 +102,7 @@ function LoginForm() {
                     />
 
                     <MyButtonBlue
-                        style={{width: "379px", opacity: authInfo.opacityLoginBtn}}
+                        style={{width: "100%", opacity: authInfo.opacityLoginBtn}}
                         disabled={!(authInfo.login && authInfo.pass)}
                         onClick={(e) => {doLogin(e)}}
                     >Войти</MyButtonBlue>

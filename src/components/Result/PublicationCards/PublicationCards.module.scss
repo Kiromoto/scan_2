@@ -109,6 +109,7 @@
 @media screen and (max-width: $mobile-width) {
   .container {
     width: auto;
+    height: auto;
     
     .dataSourceBox {
       margin: 19px 0 0 24px;
@@ -156,7 +157,13 @@
     
     .textBox {
       width: auto;
-      height: 228px;
+      min-height: 228px;
+      height: auto;
+      margin: 18px 7px 0 24px;
   }
+    
+    .btnAndWordCountBox {
+      margin: 25px 13px 18px 24px;
+    }
 }
 }

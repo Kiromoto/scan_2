@@ -4,15 +4,18 @@ import './index.scss';
 import App from './components/App/App';
 import {BrowserRouter} from "react-router-dom";
 import {AuthProvider} from "./context/AuthContext";
+import {DeviceProvider} from "./context/DeviceContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <AuthProvider>
-            <BrowserRouter>
-                <App/>
-            </BrowserRouter>
-        </AuthProvider>
-    </React.StrictMode>
+	<React.StrictMode>
+		<DeviceProvider>
+			<AuthProvider>
+				<BrowserRouter>
+					<App/>
+				</BrowserRouter>
+			</AuthProvider>
+		</DeviceProvider>
+	</React.StrictMode>
 );

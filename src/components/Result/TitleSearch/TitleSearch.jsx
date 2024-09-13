@@ -11,7 +11,7 @@ function TitleSearch() {
                     терпение.
                 </div>
             </div>
-            <div className={styles.img}>
+            <div className={styles.imgBox}>
                 <img src={womenAim} alt="womenAim"/>
             </div>
         </div>

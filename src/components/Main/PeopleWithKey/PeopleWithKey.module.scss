@@ -19,3 +19,22 @@
   }
 
 }
+
+
+@media screen and (max-width: $mobile-width) {
+  .container {
+    width: calc(100% - 28px);
+    margin: 31px 0 0 14px;
+    
+    .title {
+      width: auto;
+      font-size: 22px;
+    }
+    
+    .image {
+      width: 100%;
+      margin: 679px 0 80px 0;
+    }
+    
+  }
+}

@@ -4,7 +4,6 @@ import MyButtonLight from "../../UI/MyButtonLight/MyButtonLight";
 import MyButtonLtBlue from "../../UI/MyButtonLtBlue/MyButtonLtBlue";
 import {useNavigate} from "react-router-dom";
 import useDeviceDetect from "../../../hooks/useDeviceDetect";
-import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 function NotAuthorized(props) {
 	const navigate = useNavigate()
@@ -15,10 +14,6 @@ function NotAuthorized(props) {
 		navigate('login/')
 	}
   
-  if (isMobile) {
-    return (<BurgerMenu/>)
-  }
-	
 	return (
 		<div className={styles.container}>
 			<MyButtonLight onClick={(e) => {goToLoginPage(e)}}>Зарегистрироваться</MyButtonLight>
