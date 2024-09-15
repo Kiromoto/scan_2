@@ -51,8 +51,8 @@
 		.documentsBox {
 			width: auto;
 			margin: 34px 0 0 0;
-      display: grid;
-      grid-template-columns: repeat(1, auto);
+      display: flex;
+			flex-direction: column;
 		}
 	}
 }

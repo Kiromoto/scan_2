@@ -12,7 +12,24 @@
   &:hover {
     cursor: pointer;
     box-shadow: 0 0 4px 0 $color-turquoise;
-    
   }
+}
 
+@media screen and (max-width: $mobile-width) {
+  .myBtn {
+    width: 295px;
+    height: 52px;
+    margin: 21px 0 0 0;
+    font-size: 20px;
+    background: $color-green;
+    border: 0 solid $color-green;
+    border-color: $color-green;
+    color: $color-black;
+    background: rgba(124, 227, 225, 1);
+
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 0 0 0 $color-turquoise;
+    }
+  }
 }

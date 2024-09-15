@@ -59,6 +59,7 @@ function LoginForm() {
                         fontSize: 16,
                         color: colors.colorGreen,
                         opacity: 1,
+                        background: "rgba(255, 255, 255, 1)"
                     }}>Войти</MyButtonLight>
                     <div className={styles.lineLgContainer}></div>
                 </div>
@@ -67,6 +68,7 @@ function LoginForm() {
                         fontSize: 16,
                         opacity: 1,
                         color: "rgba(199, 199, 199, 1)",
+                        background: "rgba(255, 255, 255, 1)"
                     }}>Зарегистрироваться</MyButtonLight>
                     <div className={styles.lineLgContainer} style={{
                         background: "rgba(199, 199, 199, 1)",

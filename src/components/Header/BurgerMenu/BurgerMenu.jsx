@@ -12,12 +12,8 @@ function BurgerMenu() {
 	const {isLoggedIn} = useAuth()
 	const navigate = useNavigate()
 	const [isOpen, setIsOpen] = useState(false)
-	const goToLoginPage =
-		(event) => {
-			event.preventDefault();
-			navigate('login/')
-		}
-	
+
+
 	if (isOpen) {
 		return (
 			<div className={styles.burgerMenuIsOpen}
@@ -39,15 +35,12 @@ function BurgerMenu() {
 					/>
 				</div>
 				<Navbar setIsOpen={setIsOpen} isOpen={isOpen}/>
-				<div className={styles.burgerLoginBox}>
-					<NotAuthorized/>
-				</div>
-			
+				<NotAuthorized isOpen={isOpen} setIsOpen={setIsOpen}/>
 			</div>
 		)
 	}
-	
-	
+
+
 	return (
 		<div className={styles.burgerMenuContainer}
 		     onClick={(e) => {
@@ -55,31 +48,6 @@ function BurgerMenu() {
 			     setIsOpen(!isOpen)
 		     }}
 		>
-			{/*<Menu right*/}
-			{/*      isOpen={isOpen}*/}
-			{/*      onClick={() => setIsOpen(!isOpen)}*/}
-			{/*      customCrossIcon={}*/}
-			{/*>*/}
-			{/*	<NavLink id="main" className="menu-item" to="/">Главная</NavLink>*/}
-			{/*	<NavLink id="search" className="menu-item" to="/search">Поиск</NavLink>*/}
-			{/*	<NavLink id="result" className="menu-item" to="/result">Результат</NavLink>*/}
-			{/*	<NavLink id="signup" className="menu-item" to="/login">Зарегистрироваться</NavLink>*/}
-			{/*	<NavLink onClick={(e) => goToLoginPage} className="menu-item--small">*/}
-			{/*		<MyButtonBlue*/}
-			{/*		style={{marginTop: 55,*/}
-			{/*			marginLeft: 30,*/}
-			{/*			marginBottom: 24,*/}
-			{/*			width: "85%",*/}
-			{/*			color: "black",*/}
-			{/*			background: "rgba(124, 227, 225, 1)",*/}
-			{/*		}}*/}
-			{/*		>Войти</MyButtonBlue>*/}
-			{/*		*/}
-			{/*		*/}
-			{/*	*/}
-			{/*	</NavLink>*/}
-			{/*</Menu>*/}
-		
 		</div>
 	);
 }
