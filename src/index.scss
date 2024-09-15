@@ -34,10 +34,15 @@ $color-error: #FF5959;
 $full-width: 1440px;
 $mobile-width: 769px;
 
+
+
 body {
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 0 calc((100vw - $full-width) / 2);
+	align-items: stretch;
+	align-self: center;
+	justify-content: center;
+	margin: 0 0 0 calc(calc(100vw - 1440px) / 2);
 	padding: 0;
 	width: $full-width;
 }

@@ -3,13 +3,15 @@
 .appСontainer {
 	display: flex;
 	flex-direction: column;
-	//border: black solid 1px;
+	margin: 0 0 0 calc((100vw - $full-width) / 2);
+	padding: 0 0 0 calc((100vw - $full-width) / 2);
 	box-sizing: border-box;
 	
 	.mainСontainer {
 		display: flex;
 		flex-direction: column;
 		box-sizing: border-box;
+		margin: 0 0 0 calc((100vw - $full-width) / 2);
 	}
 }
 
